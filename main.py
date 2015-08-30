@@ -1,10 +1,18 @@
+<<<<<<< HEAD
+=======
+# -*- coding: utf-8 -*-
+>>>>>>> ef79633fe237f45d31a35ec88d8e49eabcfd0b41
 #!/usr/bin/env python
 import os
 import jinja2
 import webapp2
 from google.appengine.api import users
 from google.appengine.api import urlfetch
+<<<<<<< HEAD
 from models import Placa
+=======
+from models import Salary
+>>>>>>> ef79633fe237f45d31a35ec88d8e49eabcfd0b41
 
 
 template_dir = os.path.join(os.path.dirname(__file__), "templates")
@@ -49,6 +57,35 @@ class MainHandler(BaseHandler):
     def get(self):
         self.render_template("index.html")
 
+<<<<<<< HEAD
 app = webapp2.WSGIApplication([
     webapp2.Route('/', MainHandler),
+=======
+
+class DodajHandler(BaseHandler):
+    def get(self):
+        self.render_template("dodaj.html")
+
+
+class DodanoHandler(BaseHandler):
+    def post(self):
+        date = self.request.get("date")
+        start = self.request.get("start")
+        end = self.request.get("end")
+        job_name = self.request.get("job_name")
+        eur_hour = self.request.get("eur_hour")
+        note = self.request.get("note")
+        user = str(users.get_current_user())
+
+        salary = Salary(date=date, start=start, end=end, job_name=job_name, eur_hour=eur_hour, note=note, user=user)
+        salary.put()
+
+        self.render_template("dodano.html")
+
+
+app = webapp2.WSGIApplication([
+    webapp2.Route('/', MainHandler),
+    webapp2.Route('/dodaj', DodajHandler),
+    webapp2.Route('/dodano', DodanoHandler),
+>>>>>>> ef79633fe237f45d31a35ec88d8e49eabcfd0b41
 ], debug=True)

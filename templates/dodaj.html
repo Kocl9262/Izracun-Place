@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block title %}Dodaj{% endblock title %}
+
+{% block content %}
+
+    <div class="container">
+
+        {% if logged_in %}
+
+            <form method="post" action="/dodano">
+                <label>Datum dela: </label>
+                <input name="date" type="date" required>
+
+                <label>Začetek: </label>
+                <input name="start">
+
+                <label>Konec: </label>
+                <input name="end">
+
+                <label>Vrsta dela: </label>
+                <input name="job_name">
+
+                <label>Urna postavka: </label>
+                <input name="eur_hour">
+
+                <label>Opomba: </label>
+                <textarea name="note" rows="7" required></textarea>
+
+                <button type="submit">Submit</button>
+            </form>
+
+        {% else %}
+
+            <center><h1>Please login</h1></center>
+
+        {% endif %}
+
+    </div>
+
+{% endblock content %}

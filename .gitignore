@@ -56,4 +56,8 @@ docs/_build/
 # PyBuilder
 target/
 
+<<<<<<< HEAD
 
+=======
+test.py
+>>>>>>> ef79633fe237f45d31a35ec88d8e49eabcfd0b41
