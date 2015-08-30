@@ -2,12 +2,14 @@
 
 {% block title %}Dodaj{% endblock title %}
 
+{% block active1 %}active{% endblock active1 %}
+
 {% block content %}
 
     <div class="container">
 
         {% if logged_in %}
-
+            <div class="test">
             <form method="post" action="/dodano">
                 <label>Datum dela: </label>
                 <input name="date" type="date" required>
@@ -29,7 +31,7 @@
 
                 <button type="submit">Submit</button>
             </form>
-
+            </div>
         {% else %}
 
             <center><h1>Please login</h1></center>

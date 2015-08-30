@@ -66,7 +66,37 @@ class DodanoHandler(BaseHandler):
         note = self.request.get("note")
         user = str(users.get_current_user())
 
-        salary = Salary(date=date, start=start, end=end, job_name=job_name, eur_hour=eur_hour, note=note, user=user)
+
+        ts = start
+        te = end
+
+        (h, m) = ts.split(":")
+
+        result1 = int(h) * 3600 + int(m) * 60
+
+        (h, m) = te.split(":")
+
+        result2 = int(h) * 3600 + int(m) * 60
+
+        result = result2 - result1
+
+        result = float(result) / 3600.0
+        result = str(result)
+        (h, m) = result.split(".")
+        h = int(h)
+        m = int(m)
+
+        m = ("0.%s") % m
+        m = float(m)
+        m = m * 60.0
+        m = float(m)
+        m = round(m)
+        m = int(m)
+
+        fresult = ("%s:%s") % (h, m)
+
+        salary = Salary(date=date, start=start, end=end, job_name=job_name, eur_hour=eur_hour, note=note, user=user,
+                        fresult=fresult)
         salary.put()
 
         self.render_template("dodano.html")

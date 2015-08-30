@@ -12,3 +12,4 @@ class Salary(ndb.Model):
     eur_hour = ndb.StringProperty()
     note = ndb.StringProperty()
     user = ndb.StringProperty()
+    fresult = ndb.StringProperty()

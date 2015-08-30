@@ -15,6 +15,34 @@
 
     <!-- HEADER -->
 
+      <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container container-fluid">
+                  <!-- Brand and toggle get grouped for better mobile display -->
+                  <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                              <span class="sr-only">Toggle navigation</span>
+                              <span class="icon-bar"></span>
+                              <span class="icon-bar"></span>
+                              <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="/">Izračun Plače</a>
+                  </div>
+
+
+                  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+                        <ul class="nav navbar-nav navbar-right">
+                              <li class="{% block active1 %}{% endblock active1 %}"><a href="/dodaj">Dodaj</a></li>
+                              <li class=""><a href="#">Preglej</a></li>
+                              <li><a href="#">Vpiši se</a></li>
+
+                        </ul>
+                  </div>
+            </div>
+      </nav>
+
+
+
           {% if logged_in %}
 
 
@@ -35,6 +63,31 @@
     {% endblock content %}
 
     <!-- DODAJ FOOTER -->
+
+      <nav class="navbar navbar-default navbar-fixed-bottom">
+            <div class="container container-fluid">
+
+                  <div class="row">
+                        <div class="col-md-4">
+                              <ul>Avtorja:
+
+                                    <li>Marko Velkavrh &nbsp; <a target="_blank" href="https://www.facebook.com/marko.velkavrh.39"><img class="fbico"  src="http://icons.iconarchive.com/icons/yootheme/social-bookmark/24/social-facebook-box-blue-icon.png"></a><li>
+                                    <li>Sebastjan Koci &nbsp; <a target="_blank" href="https://www.facebook.com/sebastjan.koci"><img src="http://icons.iconarchive.com/icons/yootheme/social-bookmark/24/social-facebook-box-blue-icon.png"></a><li>
+
+                              </ul>
+                        </div>
+                              <div class="col-md-2 col-md-offset-6">
+
+                                    <ul>Ostalo:
+
+                                          <li>Kontakt</li>
+                                          <li>Prijavi napako</li>
+
+                                    </ul>
+
+                              </div>
+                  </div>
+      </nav>
 
 </body>
 </html>
