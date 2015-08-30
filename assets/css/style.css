@@ -1,0 +1,18 @@
+body {
+    background-color: lightblue;
+}
+
+ul {
+    margin-top: 12px;
+}
+
+li {
+    list-style:none;
+    background-repeat:no-repeat;
+}
+
+.fbico {
+    margin-left: -5px;
+}
+
+
