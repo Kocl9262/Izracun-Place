@@ -7,29 +7,42 @@
     <div class="container">
 
         {% if logged_in %}
+        <div class="row hero_area">
 
-            <form method="post" action="/dodano">
-                <label>Datum dela: </label>
-                <input name="date" type="date" required>
+            <div class="col-md-6">
 
-                <label>Začetek: </label>
-                <input name="start">
+                <form class="form-horizontal" role="form">
 
-                <label>Konec: </label>
-                <input name="end">
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="datum" placeholder="Vpisi dan (npr. 7.8.2015)">
+                    </div>
 
-                <label>Vrsta dela: </label>
-                <input name="job_name">
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="cas_zacetek" placeholder="Vpisi začetek delavnika (npr. 8:30)">
+                    </div>
 
-                <label>Urna postavka: </label>
-                <input name="eur_hour">
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="cas_konec" placeholder="Vpiši konec delavnika (npr. 18:30)">
+                    </div>
 
-                <label>Opomba: </label>
-                <textarea name="note" rows="7" required></textarea>
+                    <div class="form-group">
+                        <input type="vrsta dela" class="form-control" id="delo" placeholder="Katero delo si opravljal ? (Snežilka, butler, morilec...)">
+                    </div>
 
-                <button type="submit">Submit</button>
-            </form>
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="denar" placeholder="Vpisi urno postavko">
+                    </div>
 
+                    <div class="form-group">
+                        <textarea class="form-control" rows="6" id="opomba" placeholder="Vpiši opombe"></textarea>
+                    </div>
+
+
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-default">Potrdi</button>
+                    </div>
+                </form>
+            </div>
         {% else %}
 
             <center><h1>Please login</h1></center>
