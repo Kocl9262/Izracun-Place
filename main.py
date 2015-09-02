@@ -84,7 +84,7 @@ class DodanoHandler(BaseHandler):
         result = str(result)
         (h, m) = result.split(".")
         h = int(h)
-        m = int(m)
+        m = str(m)
 
         m = ("0.%s") % m
         m = float(m)
@@ -92,11 +92,36 @@ class DodanoHandler(BaseHandler):
         m = float(m)
         m = round(m)
         m = int(m)
+        m = str(m)
+
+        if len(m) < 2:
+            m = ("0%s") % (m)
 
         whours = ("%s:%s") % (h, m)
 
+        dm = float(m) / 60.0
+        dm = str(dm)
+
+        (dh, dm) = dm.split(".")
+        daily = ("%s.%s") % (h, dm)
+
+        daily = float(daily) * 4.5
+        daily = round(daily, 2)
+
+        dailywtax = daily * (1.0 - 0.155)
+        dailywtax = round(dailywtax, 2)
+
+        daily = str(daily)
+        dailywtax = str(dailywtax)
+
+        if daily.find(".") != -1:
+            daily = daily.replace(".", ",")
+
+        if dailywtax.find(".") != -1:
+            dailywtax = dailywtax.replace(".", ",")
+
         salary = Salary(date=date, start=start, end=end, job_name=job_name, eur_hour=eur_hour, note=note, user=user,
-                        whours=whours)
+                        whours=whours, daily=daily, dailywtax=dailywtax)
         salary.put()
 
         self.render_template("dodano.html")

@@ -13,3 +13,5 @@ class Salary(ndb.Model):
     note = ndb.StringProperty()
     user = ndb.StringProperty()
     whours = ndb.StringProperty()
+    daily = ndb.StringProperty()
+    dailywtax = ndb.StringProperty()
