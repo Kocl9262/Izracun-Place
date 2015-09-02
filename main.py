@@ -93,17 +93,32 @@ class DodanoHandler(BaseHandler):
         m = round(m)
         m = int(m)
 
-        fresult = ("%s:%s") % (h, m)
+        whours = ("%s:%s") % (h, m)
 
         salary = Salary(date=date, start=start, end=end, job_name=job_name, eur_hour=eur_hour, note=note, user=user,
-                        fresult=fresult)
+                        whours=whours)
         salary.put()
 
         self.render_template("dodano.html")
 
 
+class PregledHandler(BaseHandler):
+    def get(self):
+        current_user = users.get_current_user()
+
+        if current_user:
+            salary = Salary.query(Salary.user == current_user.nickname()).order(-Salary.date).fetch()
+
+            params = {"salary": salary}
+
+            self.render_template("pregled.html", params)
+
+        else:
+            return self.render_template("pregled.html")
+
 app = webapp2.WSGIApplication([
     webapp2.Route('/', MainHandler),
     webapp2.Route('/dodaj', DodajHandler),
     webapp2.Route('/dodano', DodanoHandler),
+    webapp2.Route('/pregled', PregledHandler),
 ], debug=True)

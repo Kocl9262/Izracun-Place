@@ -30,18 +30,26 @@
 
 
                   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-
+                    {% if logged_in %}
                         <ul class="nav navbar-nav navbar-right">
                               <li class="{% block active1 %}{% endblock active1 %}"><a href="/dodaj">Dodaj</a></li>
-                              <li class=""><a href="#">Preglej</a></li>
-                              <li><a href="#">Vpiši se</a></li>
-
+                              <li class="{% block active2 %}{% endblock active2 %}"><a href="/pregled">Pregled</a></li>
+                              <li><a href="{{ logout_url }}">Izpis</a></li>
                         </ul>
+
+                    {% else %}
+
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a href="{{ login_url }}">Vpiši se</a></li>
+                        </ul>
+
+                    {% endif %}
+
                   </div>
             </div>
       </nav>
 
-
+      {% block content %}
 
           {% if logged_in %}
 
@@ -57,9 +65,6 @@
 
           {% endif %}
 
-
-
-    {% block content %}
     {% endblock content %}
 
     <!-- DODAJ FOOTER -->
