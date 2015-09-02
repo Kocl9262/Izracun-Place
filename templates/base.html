@@ -15,7 +15,7 @@
 
     <!-- HEADER -->
 
-      <nav class="navbar navbar-default navbar-fixed-top">
+      <nav class="navbar navbar-default navbar-fixed-top glava">
             <div class="container container-fluid">
                   <!-- Brand and toggle get grouped for better mobile display -->
                   <div class="navbar-header">
@@ -29,21 +29,20 @@
                   </div>
 
 
-                  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
-                        <ul class="nav navbar-nav navbar-right">
-                              <li class=""><a href="/dodaj">Dodaj</a></li>
-                              <li class=""><a href="#">Preglej</a></li>
-                              <li><a href="{{ login_url }}">Vpiši se</a></li>
 
-                        </ul>
-                  </div>
-            </div>
-      </nav>
+
 
 
 
           {% if logged_in %}
+
+      <ul class="nav navbar-nav navbar-right">
+            <li class="{% block active1 %}{% endblock active1 %}"><a href="/dodaj">Dodaj</a></li>
+            <li class="{% block active2 %}{% endblock active2 %}"><a href="/pregled">Pregled</a></li>
+            <li><a href="{{ logout_url }}">Izpis</a></li>
+      </ul>
+
 
 
     <!-- zaenkrat prazno -->
@@ -52,43 +51,67 @@
           {% else %}
 
 
+      <ul class="nav navbar-nav navbar-right">
+            <li><a href="{{ login_url }}">Vpiši se</a></li>
+      </ul>
+            </div>
+
+
+
+
     <!-- če nisi logiran (logiraj se....) -->
 
 
           {% endif %}
+      </nav>
 
 
 
-    {% block content %}
-    {% endblock content %}
 
+      {% if logged_in %}
+
+          {% block content %}
+          {% endblock content %}
+
+
+      {% else %}
+
+      <div id="vpis">
+
+            <h3>Če še nisi vpisan se prosim vpiši</h3>
+
+      </div>
+
+
+      {% endif %}
     <!-- DODAJ FOOTER -->
+      <footer>
+            <div class=" container noga">
 
-      <nav class="navbar navbar-default navbar-fixed-bottom">
-            <div class="container container-fluid">
 
-                  <div class="row">
-                        <div class="col-md-4">
-                              <ul>Avtorja:
+                        <div class="row">
+                              <div class="col-md-4">
+                                    <ul class="avtorja">Avtorja:
 
-                                    <li>Marko Velkavrh &nbsp; <a target="_blank" href="https://www.facebook.com/marko.velkavrh.39"><img class="fbico"  src="http://icons.iconarchive.com/icons/yootheme/social-bookmark/24/social-facebook-box-blue-icon.png"></a><li>
-                                    <li>Sebastjan Koci &nbsp; <a target="_blank" href="https://www.facebook.com/sebastjan.koci"><img src="http://icons.iconarchive.com/icons/yootheme/social-bookmark/24/social-facebook-box-blue-icon.png"></a><li>
-
-                              </ul>
-                        </div>
-                              <div class="col-md-2 col-md-offset-6">
-
-                                    <ul>Ostalo:
-
-                                          <li>Kontakt</li>
-                                          <li>Prijavi napako</li>
-
+                                          <li class="ime_avtor">Marko Velkavrh &nbsp; <a target="_blank" href="https://www.facebook.com/marko.velkavrh.39"><img class="fbico"  src="http://icons.iconarchive.com/icons/yootheme/social-bookmark/24/social-facebook-box-blue-icon.png"></a></li>
+                                          <li class="ime_avtor">Sebastjan Koci &nbsp; <a target="_blank" href="https://www.facebook.com/sebastjan.koci"><img src="http://icons.iconarchive.com/icons/yootheme/social-bookmark/24/social-facebook-box-blue-icon.png"></a></li>
                                     </ul>
 
                               </div>
-                  </div>
+                                    <div class="col-md-2 col-md-offset-6">
+
+                                          <ul class="avtorja">Ostalo:
+
+                                                <li class="ime_avtor">Kontakt</li>
+                                                <li class="ime_avtor">Prijavi napako</li>
+
+                                          </ul>
+
+                                    </div>
+                        </div>
             </div>
-      </nav>
+      </footer>
+
 
 </body>
 </html>

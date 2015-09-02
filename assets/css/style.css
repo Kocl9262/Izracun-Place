@@ -1,15 +1,26 @@
 body {
-    background-color: lightblue;
+    background-image:url(/assets/img/Best-Website-Background-Images4.jpg);
 
 }
 
-ul {
+.ozadje {
+    background: rgba(51, 110, 123, 0.96);
+    border-radius: 15px;
+
+}
+
+.glava {
+    background: #F6F6F6;
+}
+
+.avtorja {
     margin-top: 12px;
 }
 
-li {
+.ime_avtor {
     list-style:none;
     background-repeat:no-repeat;
+
 }
 
 .fbico {
@@ -20,4 +31,38 @@ li {
 
 .hero_area {
     margin-top: 60px;
+}
+
+#vpis {
+
+    margin-top: 150px;
+    text-align: center;
+}
+
+#logiran {
+
+    margin-top: 50px;
+    color: aliceblue;
+
+}
+
+
+.noga {
+    width: 100%;
+    background: #F6F6F6;
+    margin-top: 247px;
+}
+
+.zaposlitev {
+    text-align: center;
+
+}
+
+.slike_s {
+    width: 100%;
+}
+
+.slike {
+    margin-bottom: 15px;
+    list-style: none;
 }
