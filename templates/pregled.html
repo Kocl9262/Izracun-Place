@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}Pregled{% endblock title %}
+
+{% block active2 %}active{% endblock active2 %}
+
+{% block content %}
+
+    <div class="test">
+        {% for placa in salary %}
+            <p>{{placa.dailywtax}}€</p>
+        {% endfor %}
+    </div>
+
+{% endblock content %}

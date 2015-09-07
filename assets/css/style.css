@@ -1,16 +1,29 @@
 body {
-    background-image:url(/assets/img/Best-Website-Background-Images4.jpg);
+    background: url("/assets/img/green.jpg") no-repeat fixed;
+}
+
+.index {
+    background: #434343;
+    border-radius: 10px;
+    box-shadow: 10px 10px 15px #211d1d;
+    color: aliceblue;
+    margin:  0 auto;
+
 
 }
 
-.ozadje {
-    background: rgba(51, 110, 123, 0.96);
-    border-radius: 15px;
-
-}
 
 .glava {
-    background: #F6F6F6;
+    background: url("/assets/img/header2.jpg");
+    background-size: cover;
+}
+
+.nav.navbar-nav li a {
+    color: aliceblue;
+}
+
+.navbar-inverse .navbar-brand {
+    color: #c7c7c7;
 }
 
 .avtorja {
@@ -39,23 +52,37 @@ body {
     text-align: center;
 }
 
-#logiran {
+.mgr-top {
 
-    margin-top: 50px;
+    margin-top: 100px;
+
+}
+
+
+.footer {
     color: aliceblue;
-
-}
-
-
-.noga {
+    background: url("/assets/img/header2.jpg");
+    position: absolute;
     width: 100%;
-    background: #F6F6F6;
-    margin-top: 247px;
+    height: 95px;
+    margin-top: 1000px;
+
 }
 
-.zaposlitev {
+.dodaj_naslov {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.index_zaposlitev {
+    margin-bottom: 20px;
     text-align: center;
 
+}
+
+.index_h4 {
+    text-align: center;
+    margin-bottom: 10px;
 }
 
 .slike_s {
@@ -65,4 +92,42 @@ body {
 .slike {
     margin-bottom: 15px;
     list-style: none;
+}
+
+.dodaj {
+    box-shadow: 10px 10px 15px #211d1d;
+    color: aliceblue;
+    margin:  0 auto;
+    width: 70%;
+    background-color: #434343;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+label {
+    margin-left: 20px;
+    width: 120px;
+
+}
+
+.dodaj input {
+    width: 70%;
+}
+
+textarea {
+    vertical-align: top;
+    width: 70%;
+    resize: none;
+}
+
+.gumb_dodaj {
+
+    background-color: #989191;
+}
+.button-right {
+    margin-left: 18px;
+}
+
+.zvezda {
+    text-align: right;
 }

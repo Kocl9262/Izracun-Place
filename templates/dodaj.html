@@ -2,53 +2,63 @@
 
 {% block title %}Dodaj{% endblock title %}
 
+{% block active1 %}active{% endblock active1 %}
+
 {% block content %}
 
     <div class="container">
 
         {% if logged_in %}
-        <div class="row hero_area">
+        <div class="row dodaj">
+            <div class="col-md-12">
+               <div class="dodaj_naslov">
+                    <h3>Prosimo vpišite podatke</h3>
+                </div>
+                <form method="post" action="/dodano">
+                    <label>*Datum dela: </label>
+                    <input id="calendar" name="date" type="text" required readonly>
+                    <br>
+                    <br>
 
-            <div class="col-md-6">
+                    <label>*Začetek: </label>
+                    <input name="start" required>
+                    <br>
+                    <br>
 
-                <form class="form-horizontal" role="form">
+                    <label>*Konec: </label>
+                    <input name="end" required>
+                    <br>
+                    <br>
 
-                    <div class="form-group">
-                        <input type="text" class="form-control" id="datum" placeholder="Vpisi dan (npr. 7.8.2015)">
-                    </div>
+                    <label>*Vrsta dela: </label>
+                    <input name="job_name" required>
+                    <br>
+                    <br>
 
-                    <div class="form-group">
-                        <input type="text" class="form-control" id="cas_zacetek" placeholder="Vpisi začetek delavnika (npr. 8:30)">
-                    </div>
-
-                    <div class="form-group">
-                        <input type="text" class="form-control" id="cas_konec" placeholder="Vpiši konec delavnika (npr. 18:30)">
-                    </div>
-
-                    <div class="form-group">
-                        <input type="vrsta dela" class="form-control" id="delo" placeholder="Katero delo si opravljal ? (Snežilka, butler, morilec...)">
-                    </div>
-
-                    <div class="form-group">
-                        <input type="text" class="form-control" id="denar" placeholder="Vpisi urno postavko">
-                    </div>
-
-                    <div class="form-group">
-                        <textarea class="form-control" rows="6" id="opomba" placeholder="Vpiši opombe"></textarea>
-                    </div>
+                    <label>*Urna postavka: </label>
+                    <input name="eur_hour" required>
+                    <br>
+                    <br>
 
 
-                    <div class="form-group">
-                        <button type="submit" class="btn btn-default">Potrdi</button>
+                    <label class="">Opomba: </label>
+                    <textarea name="note" rows="7"></textarea>
+                    <br>
+                    <br>
+
+                   <div class="button-right">
+                        <button class="gumb_dodaj" type="submit">Potrdi</button>
                     </div>
                 </form>
+                <p class="zvezda">Polja z * so obvezna</p>
             </div>
+        </div>
         {% else %}
 
             <center><h1>Please login</h1></center>
 
         {% endif %}
 
-    </div>
+</div>
 
 {% endblock content %}

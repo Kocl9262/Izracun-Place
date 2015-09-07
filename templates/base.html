@@ -15,7 +15,7 @@
 
     <!-- HEADER -->
 
-      <nav class="navbar navbar-default navbar-fixed-top glava">
+      <nav class="navbar navbar-inverse navbar-fixed-top glava">
             <div class="container container-fluid">
                   <!-- Brand and toggle get grouped for better mobile display -->
                   <div class="navbar-header">
@@ -27,10 +27,6 @@
                         </button>
                         <a class="navbar-brand" href="/">Izračun Place</a>
                   </div>
-
-
-
-
 
 
 
@@ -65,7 +61,7 @@
           {% endif %}
       </nav>
 
-
+      <div class="mgr-top"></div>
 
 
       {% if logged_in %}
@@ -84,20 +80,20 @@
 
 
       {% endif %}
+
     <!-- DODAJ FOOTER -->
-      <footer>
-            <div class=" container noga">
 
-
+            <footer class="footer">
+                  <div class="container">
                         <div class="row">
-                              <div class="col-md-4">
-                                    <ul class="avtorja">Avtorja:
+                                    <div class="col-md-4">
+                                          <ul class="avtorja">Avtorja:
 
-                                          <li class="ime_avtor">Marko Velkavrh &nbsp; <a target="_blank" href="https://www.facebook.com/marko.velkavrh.39"><img class="fbico"  src="http://icons.iconarchive.com/icons/yootheme/social-bookmark/24/social-facebook-box-blue-icon.png"></a></li>
-                                          <li class="ime_avtor">Sebastjan Koci &nbsp; <a target="_blank" href="https://www.facebook.com/sebastjan.koci"><img src="http://icons.iconarchive.com/icons/yootheme/social-bookmark/24/social-facebook-box-blue-icon.png"></a></li>
-                                    </ul>
+                                                <li class="ime_avtor">Marko Velkavrh &nbsp; <a target="_blank" href="https://www.facebook.com/marko.velkavrh.39"><img class="fbico"  src="http://icons.iconarchive.com/icons/yootheme/social-bookmark/24/social-facebook-box-blue-icon.png"></a></li>
+                                                <li class="ime_avtor">Sebastjan Koci &nbsp; <a target="_blank" href="https://www.facebook.com/sebastjan.koci"><img src="http://icons.iconarchive.com/icons/yootheme/social-bookmark/24/social-facebook-box-blue-icon.png"></a></li>
+                                          </ul>
 
-                              </div>
+                                    </div>
                                     <div class="col-md-2 col-md-offset-6">
 
                                           <ul class="avtorja">Ostalo:
@@ -108,9 +104,10 @@
                                           </ul>
 
                                     </div>
+                              </div>
                         </div>
-            </div>
-      </footer>
+
+            </footer>
 
 
 </body>

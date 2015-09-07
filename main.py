@@ -66,14 +66,84 @@ class DodanoHandler(BaseHandler):
         note = self.request.get("note")
         user = str(users.get_current_user())
 
-        salary = Salary(date=date, start=start, end=end, job_name=job_name, eur_hour=eur_hour, note=note, user=user)
+
+        ts = start
+        te = end
+
+        (h, m) = ts.split(":")
+
+        result1 = int(h) * 3600 + int(m) * 60
+
+        (h, m) = te.split(":")
+
+        result2 = int(h) * 3600 + int(m) * 60
+
+        result = result2 - result1
+
+        result = float(result) / 3600.0
+        result = str(result)
+        (h, m) = result.split(".")
+        h = int(h)
+        m = str(m)
+
+        m = ("0.%s") % m
+        m = float(m)
+        m = m * 60.0
+        m = float(m)
+        m = round(m)
+        m = int(m)
+        m = str(m)
+
+        if len(m) < 2:
+            m = ("0%s") % (m)
+
+        whours = ("%s:%s") % (h, m)
+
+        dm = float(m) / 60.0
+        dm = str(dm)
+
+        (dh, dm) = dm.split(".")
+        daily = ("%s.%s") % (h, dm)
+
+        daily = float(daily) * 4.5
+        daily = round(daily, 2)
+
+        dailywtax = daily * (1.0 - 0.155)
+        dailywtax = round(dailywtax, 2)
+
+        daily = str(daily)
+        dailywtax = str(dailywtax)
+
+        if daily.find(".") != -1:
+            daily = daily.replace(".", ",")
+
+        if dailywtax.find(".") != -1:
+            dailywtax = dailywtax.replace(".", ",")
+
+        salary = Salary(date=date, start=start, end=end, job_name=job_name, eur_hour=eur_hour, note=note, user=user,
+                        whours=whours, daily=daily, dailywtax=dailywtax)
         salary.put()
 
         self.render_template("dodano.html")
 
 
+class PregledHandler(BaseHandler):
+    def get(self):
+        current_user = users.get_current_user()
+
+        if current_user:
+            salary = Salary.query(Salary.user == current_user.nickname()).order(-Salary.date).fetch()
+
+            params = {"salary": salary}
+
+            self.render_template("pregled.html", params)
+
+        else:
+            return self.render_template("pregled.html")
+
 app = webapp2.WSGIApplication([
     webapp2.Route('/', MainHandler),
     webapp2.Route('/dodaj', DodajHandler),
     webapp2.Route('/dodano', DodanoHandler),
+    webapp2.Route('/pregled', PregledHandler),
 ], debug=True)
