@@ -9,28 +9,31 @@
     <div class="container">
 
         {% if logged_in %}
-            <div class="test">
-            <form method="post" action="/dodano">
-                <label>Datum dela: </label>
-                <input name="date" type="date" required>
+        <div class="row hero_area">
 
-                <label>Začetek: </label>
-                <input name="start">
+            <div class="col-md-6">
 
-                <label>Konec: </label>
-                <input name="end">
+                <form method="post" action="/dodano">
+                    <label>Datum dela: </label>
+                    <input id="calendar" name="date" type="text" required readonly>
 
-                <label>Vrsta dela: </label>
-                <input name="job_name">
+                    <label>Začetek: </label>
+                    <input name="start">
 
-                <label>Urna postavka: </label>
-                <input name="eur_hour">
+                    <label>Konec: </label>
+                    <input name="end">
 
-                <label>Opomba: </label>
-                <textarea name="note" rows="7" required></textarea>
+                    <label>Vrsta dela: </label>
+                    <input name="job_name">
 
-                <button type="submit">Submit</button>
-            </form>
+                    <label>Urna postavka: </label>
+                    <input name="eur_hour">
+
+                    <label>Opomba: </label>
+                    <textarea name="note" rows="7" required></textarea>
+
+                    <button type="submit">Submit</button>
+                </form>
             </div>
         {% else %}
 

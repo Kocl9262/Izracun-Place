@@ -66,6 +66,10 @@ class DodanoHandler(BaseHandler):
         note = self.request.get("note")
         user = str(users.get_current_user())
 
+        if eur_hour.find(",") != -1:
+            eur_hour = eur_hour.replace(",", ".")
+
+        eur_hour = float(eur_hour)
 
         ts = start
         te = end
@@ -83,7 +87,7 @@ class DodanoHandler(BaseHandler):
         result = float(result) / 3600.0
         result = str(result)
         (h, m) = result.split(".")
-        h = int(h)
+        h = str(h)
         m = str(m)
 
         m = ("0.%s") % m
@@ -97,15 +101,15 @@ class DodanoHandler(BaseHandler):
         if len(m) < 2:
             m = ("0%s") % (m)
 
-        whours = ("%s:%s") % (h, m)
+        total_hrs = ("%s:%s") % (h, m)
 
         dm = float(m) / 60.0
         dm = str(dm)
 
-        (dh, dm) = dm.split(".")
-        daily = ("%s.%s") % (h, dm)
+        (dh, dm2) = dm.split(".")
+        daily = ("%s.%s") % (h, dm2)
 
-        daily = float(daily) * 4.5
+        daily = float(daily) * eur_hour
         daily = round(daily, 2)
 
         dailywtax = daily * (1.0 - 0.155)
@@ -120,8 +124,17 @@ class DodanoHandler(BaseHandler):
         if dailywtax.find(".") != -1:
             dailywtax = dailywtax.replace(".", ",")
 
+        eur_hour = str(eur_hour)
+
+        if eur_hour.find(".") != -1:
+            eur_hour = eur_hour.replace(".", ",")
+
+        (m, d, y) = date.split("/")
+
+        date = ("%s.%s.%s") % (d, m, y)
+
         salary = Salary(date=date, start=start, end=end, job_name=job_name, eur_hour=eur_hour, note=note, user=user,
-                        whours=whours, daily=daily, dailywtax=dailywtax)
+                        total_hrs=total_hrs, daily=daily, dailywtax=dailywtax)
         salary.put()
 
         self.render_template("dodano.html")
@@ -132,7 +145,7 @@ class PregledHandler(BaseHandler):
         current_user = users.get_current_user()
 
         if current_user:
-            salary = Salary.query(Salary.user == current_user.nickname()).order(-Salary.date).fetch()
+            salary = Salary.query(Salary.user == current_user.nickname()).order(Salary.date).fetch()
 
             params = {"salary": salary}
 

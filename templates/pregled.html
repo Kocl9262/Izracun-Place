@@ -11,5 +11,42 @@
             <p>{{placa.dailywtax}}€</p>
         {% endfor %}
     </div>
+    <div class="container">
+        <table border="1">
+            <tr>
+                <th colspan="8">MESEC LETO</th>
+            </tr>
+            <tr>
+                <th>Del. mesto</th>
+                <th>Datum</th>
+                <th>Začetek</th>
+                <th>Konec</th>
+                <th>Ur</th>
+                <th>Opomba</th>
+                <th>Zaslužek</th>
+                <th>-15,5%</th>
+            </tr>
+        {% for info in salary %}
+            <tr>
+                <td>{{info.job_name}}</td>
+                <td>{{info.date}}</td>
+                <td>{{info.start}}</td>
+                <td>{{info.end}}</td>
+                <td>{{info.total_hrs}}</td>
+                <td>{{info.note}}</td>
+                <td>{{info.daily}}€</td>
+                <td>{{info.dailywtax}}€</td>
+            </tr>
+        {% endfor %}
+            <tr>
+                <td colspan="3"></td>
+                <td>Skupaj ur:</td>
+                <td>ure</td>
+                <td>Skupaj €:</td>
+                <td>placa</td>
+                <td>placa -15,5%</td>
+            </tr>
+        </table>
+    </div>
 
 {% endblock content %}
