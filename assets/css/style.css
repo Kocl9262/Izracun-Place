@@ -26,6 +26,10 @@ body {
     color: #c7c7c7;
 }
 
+.navbar-inverse .navbar-brand small {
+    font-size: 8px;
+}
+
 .avtorja {
     margin-top: 12px;
 }
@@ -66,6 +70,7 @@ body {
     width: 100%;
     height: 95px;
     margin-top: 1000px;
+    background-size: cover;
 
 }
 
@@ -85,11 +90,11 @@ body {
     margin-bottom: 10px;
 }
 
-.slike_s {
+.slike_div {
     width: 100%;
 }
 
-.slike {
+.slike_pos {
     margin-bottom: 15px;
     list-style: none;
 }
@@ -111,18 +116,24 @@ label {
 }
 
 .dodaj input {
+    color:black;
     width: 70%;
 }
 
 textarea {
+    color:black;
     vertical-align: top;
     width: 70%;
     resize: none;
 }
 
 .gumb_dodaj {
-
+    margin-top: 10px;
     background-color: #989191;
+}
+
+.dodano a {
+    color: aliceblue;
 }
 .button-right {
     margin-left: 18px;
@@ -130,4 +141,14 @@ textarea {
 
 .zvezda {
     text-align: right;
+}
+
+.dodano {
+    background-color: #434343;
+    text-align: center;
+    box-shadow: 10px 10px 15px #211d1d;
+    color: aliceblue;
+    width: 70%;
+    padding: 10px;
+    border-radius: 10px;
 }

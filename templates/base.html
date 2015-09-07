@@ -1,16 +1,25 @@
 <!DOCTYPE html>
 <html>
-<head lang="en">
-    <meta name="Keywords" content="izracun place, izracun, placa">
-    <meta name="author" content="Sebastjan Koci, Marko Velkavrh">
-    <meta charset="UTF-8">
-    <title>{% block title %}{% endblock title %}</title>
-    <link rel="stylesheet" href="/assets/css/bootstrap.css">
-    <link rel="stylesheet" href="/assets/css/style.css">
-    <link rel="shortcut icon" href="/assets/favicon/b.png">
-    <script src="/assets/js/jquery-1.11.3.min.js"></script>
-    <script src="/assets/js/bootstrap.js"></script>
-</head>
+      <head lang="en">
+            <meta name="Keywords" content="izracun place, izracun, placa">
+            <meta name="author" content="Sebastjan Koci, Marko Velkavrh">
+            <meta charset="UTF-8">
+            <title>{% block title %}{% endblock title %}</title>
+            <link rel="stylesheet" href="/assets/css/bootstrap.css">
+            <link rel="stylesheet" href="/assets/css/style.css">
+            <link rel="stylesheet" href="/assets/css/jquery-ui.css">
+            <link rel="shortcut icon" href="/assets/favicon/b.png">
+            <script src="/assets/js/jquery-1.11.3.min.js"></script>
+            <script src="/assets/js/jquery-ui.min.js"></script>
+            <script src="/assets/js/bootstrap.js"></script>
+
+            <script>
+                  $(function() {
+                        $( "#calendar" ).datepicker();
+                  });
+            </script>
+
+      </head>
 <body>
 
     <!-- HEADER -->
@@ -25,7 +34,7 @@
                               <span class="icon-bar"></span>
                               <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand" href="/">Izračun Place</a>
+                        <a class="navbar-brand" href="/">Izračun Place / <small>ALPHA</small></a>
                   </div>
 
 
