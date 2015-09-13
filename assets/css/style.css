@@ -40,6 +40,7 @@ body {
 
 }
 
+
 .fbico {
     margin-left: -5px;
 }
@@ -191,4 +192,13 @@ table .table_section .test {
     border-bottom-color: transparent;
     background-color: transparent;
 
+}
+
+.modal-content {
+    background-color: #434343;
+    text-align: center;
+}
+
+.kontakt {
+    list-style: none
 }

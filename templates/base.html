@@ -109,8 +109,8 @@
 
                                           <ul class="avtorja">Ostalo:
 
-                                                <li class="ime_avtor">Kontakt</li>
-                                                <li class="ime_avtor">Prijavi napako</li>
+                                                <li class="kontakt"><a href="#contact" data-toggle="modal">Pišite nam</a></li>
+
 
                                           </ul>
 
@@ -118,7 +118,60 @@
                               </div>
                         </div>
 
-            </footer>
+                  <div class="modal fade" id="contact" role="dialog">
+                        <div class="modal-dialog">
+                              <div class="modal-content obrazec">
+                                    <form class="form-horizontal">
+                                          <div class="modal-header">
+                                                <h4>V primeru da se soočate s težavami na strani, ali pa imate kakšen dober predlog, nas kontaktirajte spodaj.</h4>
+                                          </div>
+                                          <div class="modal-body">
+
+                                                <div class="form-group">
+
+                                                      <label for="contact-name" class="col-md-2 control-label">Ime:</label>
+                                                      <div class="col-md-8">
+
+                                                            <input type="text" class="form-control" id="contact-name" placeholder="Polno Ime">
+
+                                                      </div>
+                                                </div>
+
+                                                <div class="form-group">
+
+                                                      <label for="contact-email" class="col-md-2 control-label">Email:</label>
+                                                      <div class="col-md-8">
+
+                                                            <input type="email" class="form-control" id="contact-email" placeholder="Vpišite email">
+
+                                                      </div>
+                                                </div>
+
+                                                <div class="form-group">
+
+                                                      <label for="contact-msg" class="col-md-2 control-label">Sporočilo:</label>
+                                                      <div class="col-md-8">
+                                                            <textarea class="form-control" rows="8" id="contact-msg"></textarea>
+
+                                                      </div>
+                                                </div>
+
+                                          </div>
+                                          <div class="modal-footer">
+                                                <a class="btn btn-default" data-dismiss="modal">Zapri</a>
+                                                <button class="btn btn-primary" type="submit">Pošlji</button>
+                                          </div>
+                                    </form>
+                              </div>
+                        </div>
+
+                  </div>
+
+      </footer>
+
+
+
+
 
 
 </body>
