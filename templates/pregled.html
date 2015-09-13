@@ -6,47 +6,43 @@
 
 {% block content %}
 
-    <div class="test">
-        {% for placa in salary %}
-            <p>{{placa.dailywtax}}€</p>
-        {% endfor %}
-    </div>
-    <div class="container">
-        <table border="1">
-            <tr>
-                <th colspan="8">MESEC LETO</th>
-            </tr>
-            <tr>
-                <th>Del. mesto</th>
-                <th>Datum</th>
-                <th>Začetek</th>
-                <th>Konec</th>
-                <th>Ur</th>
-                <th>Opomba</th>
-                <th>Zaslužek</th>
-                <th>-15,5%</th>
-            </tr>
+<div class="container">
+<div class="table-responsive">
+    <table class="table table-bordered table-condensed tabela_ozadje">
+        <tr class="table_title">
+            <th colspan="8">MESEC LETO</th>
+        </tr>
+        <tr class="table_section">
+            <th>Del. mesto</th>
+            <th>Datum</th>
+            <th>Začetek</th>
+            <th>Konec</th>
+            <th>Ur</th>
+            <th>Opomba</th>
+            <th>Zaslužek</th>
+            <th>-15,5%</th>
+        </tr>
         {% for info in salary %}
-            <tr>
-                <td>{{info.job_name}}</td>
-                <td>{{info.date}}</td>
-                <td>{{info.start}}</td>
-                <td>{{info.end}}</td>
-                <td>{{info.total_hrs}}</td>
-                <td>{{info.note}}</td>
-                <td>{{info.daily}}€</td>
-                <td>{{info.dailywtax}}€</td>
-            </tr>
+        <tr class="table_data">
+            <td>{{info.job_name}}</td>
+            <td>{{info.date}}</td>
+            <td>{{info.start}}</td>
+            <td>{{info.end}}</td>
+            <td>{{info.total_hrs}}</td>
+            <td>{{info.note}}</td>
+            <td>{{info.daily}}€</td>
+            <td>{{info.dailywtax}}€</td>
+        </tr>
         {% endfor %}
-            <tr>
-                <td colspan="3"></td>
-                <td>Skupaj ur:</td>
-                <td>ure</td>
-                <td>Skupaj €:</td>
-                <td>placa</td>
-                <td>placa -15,5%</td>
-            </tr>
-        </table>
-    </div>
-
+        <tr class="table_section">
+            <td class="test" colspan="3"></td>
+            <td class="table_section_barva">Skupaj ur:</td>
+            <td class="table_section_barva">ure</td>
+            <td class="table_section_barva">Skupaj €:</td>
+            <td class="table_section_barva">{{month_total_daily}}€</td>
+            <td class="table_section_barva">{{month_total_dailywtax}}€</td>
+        </tr>
+    </table>
+</div>
+</div>
 {% endblock content %}

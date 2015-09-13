@@ -2,47 +2,54 @@
 
 {% block title %}Izračun plače{% endblock title %}
 
+{% block active %}active{% endblock active %}
+
 {% block content %}
 
-<div id="logiran">
 
-<p>{{user}} v tem mesecu si oddelal ... ur</p>
-<p>{{user}} tvoj zaslužek je ... € </p>
 
-</div>
+<div class="container index">
+      <div class="index_zaposlitev">
+            <h3>Iščeš zaposlitev?</h3>
+      </div>
 
-<div class="container ozadje">
-<p class="zaposlitev">Iščeš zaposlitev</p>
-
-<div class="row slike_s">
+<div class="row slike_div">
       <div class="col-md-4 col-md-offset-1">
 
-            <ul>Študentsko delo
 
-                  <li class="slike"><a target="_blank" href="http://www.studentski-servis.com/"><img src="/assets/img/e-student.gif"></a></li>
-                  <li class="slike"><a target="_blank" href="http://www.mservis.si/"><img src="/assets/img/m-servis.jpg"></a></li>
-                  <li class="slike"><a target="_blank" href="http://www.stud-serv-mb.si/"><img src="/assets/img/studentski_servis_maribor.jpg"></a></li>
-                  <li class="slike"><a target="_blank" href="http://www.studentski.si/"><img src="/assets/img/studentski.si.png"></a></li>
+            <div class="index_h4">
+                  <h4>Študentsko delo:</h4>
+            </div>
+            <ul>
+                  <li class="slike_pos"><a target="_blank" href="http://www.studentski-servis.com/"><img src="/assets/img/e-stud.png"></a></li>
+                  <li class="slike_pos"><a target="_blank" href="http://www.mservis.si/"><img src="/assets/img/m-servis.jpg"></a></li>
+                  <li class="slike_pos"><a target="_blank" href="http://www.stud-serv-mb.si/"><img src="/assets/img/studentski_servis_maribor.jpg"></a></li>
+                  <li class="slike_pos"><a target="_blank" href="http://www.studentski.si/"><img src="/assets/img/studentski.si.png"></a></li>
 
             </ul>
 
 
       </div>
+
 
       <div class="col-md-4 col-md-offset-2">
 
-            <ul>Redna zaposlitev
 
-                  <li class="slike"><a target="_blank" href="http://www.ess.gov.si/"><img src="/assets/img/zzzs.jpg"></a></li>
-                  <li class="slike"><a target="_blank" href="https://www.mojedelo.com/"><img src="/assets/img/mdelo.jpg"></a></li>
-                  <li class="slike"><a target="_blank" href="http://www.mojazaposlitev.si/"><img src="/assets/img/mzapo.png"></a></li>
-                  <li class="slike"><a target="_blank" href="http://www.e-zaposlitev.com/"><img src="/assets/img/e-zap.png"></a></li>
+            <div class="index_h4">
+                  <h4>Redno delo:</h4>
+            </div>
+                  <ul>
+                        <li class="slike_pos"><a target="_blank" href="http://www.ess.gov.si/"><img src="/assets/img/zzzs.jpg"></a></li>
+                        <li class="slike_pos"><a target="_blank" href="https://www.mojedelo.com/"><img src="/assets/img/mdelo.jpg"></a></li>
+                        <li class="slike_pos"><a target="_blank" href="http://www.mojazaposlitev.si/"><img src="/assets/img/mzapo.png"></a></li>
+                        <li class="slike_pos"><a target="_blank" href="http://www.e-zaposlitev.com/"><img src="/assets/img/e-zap.png"></a></li>
 
-
-            </ul>
+                  </ul>
       </div>
 
 </div>
-
+<br>
 </div>
+
+
 {% endblock content %}

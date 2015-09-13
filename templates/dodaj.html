@@ -9,38 +9,56 @@
     <div class="container">
 
         {% if logged_in %}
-        <div class="row hero_area">
-
-            <div class="col-md-6">
-
+        <div class="row dodaj">
+            <div class="col-md-12">
+               <div class="dodaj_naslov">
+                    <h3>Prosimo vpišite podatke</h3>
+                </div>
                 <form method="post" action="/dodano">
-                    <label>Datum dela: </label>
+                    <label>*Datum dela: </label>
                     <input id="calendar" name="date" type="text" required readonly>
+                    <br>
+                    <br>
 
-                    <label>Začetek: </label>
-                    <input name="start">
+                    <label>*Začetek: </label>
+                    <input name="start" required>
+                    <br>
+                    <br>
 
-                    <label>Konec: </label>
-                    <input name="end">
+                    <label>*Konec: </label>
+                    <input name="end" required>
+                    <br>
+                    <br>
 
-                    <label>Vrsta dela: </label>
-                    <input name="job_name">
+                    <label>*Vrsta dela: </label>
+                    <input name="job_name" required>
+                    <br>
+                    <br>
 
-                    <label>Urna postavka: </label>
-                    <input name="eur_hour">
+                    <label>*Urna postavka: </label>
+                    <input name="eur_hour" required>
+                    <br>
+                    <br>
 
-                    <label>Opomba: </label>
-                    <textarea name="note" rows="7" required></textarea>
 
-                    <button type="submit">Submit</button>
+                    <label class="">Opomba: </label>
+                    <textarea name="note" rows="7"></textarea>
+                    <br>
+                    <br>
+
+                   <div class="button-right">
+                        <button class="gumb_dodaj" type="submit">Potrdi</button>
+                    </div>
                 </form>
+                <p class="zvezda">Polja z * so obvezna</p>
             </div>
+        </div>
         {% else %}
 
             <center><h1>Please login</h1></center>
 
         {% endif %}
 
-    </div>
+</div>
 
 {% endblock content %}
