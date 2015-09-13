@@ -6,17 +6,13 @@
 
 {% block content %}
 
-<div class="test">
-    {% for placa in salary %}
-    <p>{{placa.dailywtax}}€</p>
-    {% endfor %}
-</div>
 <div class="container">
-    <table border="1">
-        <tr>
+<div class="table-responsive">
+    <table class="table table-bordered table-condensed tabela_ozadje">
+        <tr class="table_title">
             <th colspan="8">MESEC LETO</th>
         </tr>
-        <tr>
+        <tr class="table_section">
             <th>Del. mesto</th>
             <th>Datum</th>
             <th>Začetek</th>
@@ -27,7 +23,7 @@
             <th>-15,5%</th>
         </tr>
         {% for info in salary %}
-        <tr>
+        <tr class="table_data">
             <td>{{info.job_name}}</td>
             <td>{{info.date}}</td>
             <td>{{info.start}}</td>
@@ -38,15 +34,15 @@
             <td>{{info.dailywtax}}€</td>
         </tr>
         {% endfor %}
-        <tr>
-            <td colspan="3"></td>
-            <td>Skupaj ur:</td>
-            <td>ure</td>
-            <td>Skupaj €:</td>
-            <td>placa</td>
-            <td>placa -15,5%</td>
+        <tr class="table_section">
+            <td class="test" colspan="3"></td>
+            <td class="table_section_barva">Skupaj ur:</td>
+            <td class="table_section_barva">ure</td>
+            <td class="table_section_barva">Skupaj €:</td>
+            <td class="table_section_barva">placa</td>
+            <td class="table_section_barva">placa -15,5%</td>
         </tr>
     </table>
 </div>
-
+</div>
 {% endblock content %}

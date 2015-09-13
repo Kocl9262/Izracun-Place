@@ -129,7 +129,7 @@ textarea {
 
 .gumb_dodaj {
     margin-top: 10px;
-    background-color: #989191;
+    background-color: #262424;
 }
 
 .dodano a {
@@ -151,4 +151,44 @@ textarea {
     width: 70%;
     padding: 10px;
     border-radius: 10px;
+}
+
+.tabela_ozadje {
+    background-color: transparent;
+    color: aliceblue;
+}
+
+table .table_section .table_section_barva {
+    background-color: #262424;
+
+}
+
+
+table .table_section td {
+    text-align: center;
+    background-color: #262424;
+}
+
+table .table_section th {
+    text-align: center;
+    background-color: #262424;
+}
+
+
+table .table_title th {
+    text-align: center;
+    font-size: 2em;
+    background-color: #262424;
+}
+
+table .table_data td {
+    text-align: center;
+    background-color: #434343;
+}
+
+table .table_section .test {
+    border-left-color: transparent;
+    border-bottom-color: transparent;
+    background-color: transparent;
+
 }
