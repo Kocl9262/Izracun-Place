@@ -7,7 +7,6 @@ from google.appengine.api import users
 from google.appengine.api import urlfetch
 from models import Salary
 
-
 template_dir = os.path.join(os.path.dirname(__file__), "templates")
 jinja_env = jinja2.Environment(loader=jinja2.FileSystemLoader(template_dir), autoescape=False)
 
@@ -147,12 +146,32 @@ class PregledHandler(BaseHandler):
         if current_user:
             salary = Salary.query(Salary.user == current_user.nickname()).order(Salary.date).fetch()
 
-            params = {"salary": salary}
+            daily = []
+
+            for item in salary:
+                daily.append(item.daily)
+
+            daily = [w.replace(',', '.') for w in daily]
+            daily = map(float, daily)
+            month_total_daily = sum(daily)
+
+            dailywtax = []
+
+            for item in salary:
+                dailywtax.append(item.dailywtax)
+
+            dailywtax = [w.replace(',', '.') for w in dailywtax]
+            dailywtax = map(float, dailywtax)
+            month_total_dailywtax = sum(dailywtax)
+
+            params = {"salary": salary, "month_total_daily": month_total_daily,
+                      "month_total_dailywtax": month_total_dailywtax}
 
             self.render_template("pregled.html", params)
 
         else:
             return self.render_template("pregled.html")
+
 
 app = webapp2.WSGIApplication([
     webapp2.Route('/', MainHandler),
