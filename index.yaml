@@ -12,6 +12,13 @@ indexes:
 
 - kind: Salary
   properties:
+  - name: m
+  - name: user
+  - name: y
+  - name: date
+
+- kind: Salary
+  properties:
   - name: user
   - name: date
 
@@ -20,3 +27,9 @@ indexes:
   - name: user
   - name: date
     direction: desc
+
+- kind: Salary
+  properties:
+  - name: user
+  - name: y
+  - name: date

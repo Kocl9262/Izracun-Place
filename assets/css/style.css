@@ -51,11 +51,7 @@ body {
     margin-top: 60px;
 }
 
-#vpis {
 
-    margin-top: 150px;
-    text-align: center;
-}
 
 .mgr-top {
 
@@ -67,9 +63,7 @@ body {
 .footer {
     color: aliceblue;
     background: url("/assets/img/header2.jpg");
-    position: absolute;
     width: 100%;
-    height: 95px;
     margin-top: 1000px;
     background-size: cover;
 
@@ -128,10 +122,11 @@ textarea {
     resize: none;
 }
 
-.gumb_dodaj {
+.button-right {
     margin-top: 10px;
-    background-color: #262424;
+
 }
+
 
 .dodano a {
     color: aliceblue;
@@ -187,7 +182,7 @@ table .table_data td {
     background-color: #434343;
 }
 
-table .table_section .test {
+table .table_section .nevidna {
     border-left-color: transparent;
     border-bottom-color: transparent;
     background-color: transparent;
@@ -200,5 +195,22 @@ table .table_section .test {
 }
 
 .kontakt {
-    list-style: none
+    margin-bottom: 5px;
+    list-style-type: square;
+
 }
+
+.base_vpis {
+    width: 50%;
+    margin: 0 auto;
+    padding: 40px;
+    background-color: #434343;
+    border-radius: 5px;
+}
+
+.vpis {
+    color: aliceblue;
+    text-align: center;
+    letter-spacing: 5px;
+}
+
