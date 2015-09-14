@@ -10,7 +10,7 @@
 <div class="table-responsive">
     <table class="table table-bordered table-condensed tabela_ozadje">
         <tr class="table_title">
-            <th colspan="8">MESEC LETO</th>
+            <th colspan="8">{% block tabletitle %}{% endblock tabletitle %}</th>
         </tr>
         <tr class="table_section">
             <th>Del. mesto</th>
@@ -37,7 +37,7 @@
         <tr class="table_section">
             <td class="test" colspan="3"></td>
             <td class="table_section_barva">Skupaj ur:</td>
-            <td class="table_section_barva">ure</td>
+            <td class="table_section_barva">{{month_total_hrs}}</td>
             <td class="table_section_barva">Skupaj €:</td>
             <td class="table_section_barva">{{month_total_daily}}€</td>
             <td class="table_section_barva">{{month_total_dailywtax}}€</td>

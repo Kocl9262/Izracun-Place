@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}Dodaj{% endblock title %}
+
+{% block active1 %}active{% endblock active1 %}
+
+{% block content %}
+
+    <h1>Si zihr, dab ti to zbrisov al kuga?</h1>
+
+    <form method="post" action="/table/{{ table.key.id() }}/delete">
+        <button>Yes</button>
+    </form>
+
+{% endblock content %}

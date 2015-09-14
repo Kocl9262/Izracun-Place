@@ -15,3 +15,6 @@ class Salary(ndb.Model):
     total_hrs = ndb.StringProperty()
     daily = ndb.StringProperty()
     dailywtax = ndb.StringProperty()
+    d = ndb.StringProperty()
+    m = ndb.StringProperty()
+    y = ndb.StringProperty()

@@ -45,14 +45,9 @@
       <ul class="nav navbar-nav navbar-right">
             <li class="{% block active %}{% endblock active %}"><a href="/">Domov</a></li>
             <li class="{% block active1 %}{% endblock active1 %}"><a href="/dodaj">Dodaj</a></li>
-            <li class="{% block active2 %}{% endblock active2 %}"><a href="/pregled">Pregled</a></li>
+            <li class="{% block active2 %}{% endblock active2 %}"><a href="/l2015">Pregled</a></li>
             <li><a href="{{ logout_url }}">Izpis</a></li>
       </ul>
-
-
-
-    <!-- zaenkrat prazno -->
-
 
           {% else %}
 
@@ -62,13 +57,8 @@
       </ul>
             </div>
 
-
-
-
-    <!-- če nisi logiran (logiraj se....) -->
-
-
           {% endif %}
+
       </div>
       </nav>
 
@@ -91,8 +81,6 @@
 
 
       {% endif %}
-
-    <!-- DODAJ FOOTER -->
 
             <footer class="footer">
                   <div class="container">
