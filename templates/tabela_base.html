@@ -29,13 +29,13 @@
             <td>{{info.start}}</td>
             <td>{{info.end}}</td>
             <td>{{info.total_hrs}}</td>
-            <td>{{info.note}}</td>
+            <td><a href="/table/{{ info.key.id() }}">{{info.note}}</a></td>
             <td>{{info.daily}}€</td>
             <td>{{info.dailywtax}}€</td>
         </tr>
         {% endfor %}
         <tr class="table_section">
-            <td class="test" colspan="3"></td>
+            <td class="nevidna" colspan="3"></td>
             <td class="table_section_barva">Skupaj ur:</td>
             <td class="table_section_barva">{{month_total_hrs}}</td>
             <td class="table_section_barva">Skupaj €:</td>

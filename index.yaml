@@ -44,3 +44,9 @@ indexes:
   - name: user
   - name: y
   - name: date
+
+- kind: Salary
+  properties:
+  - name: user
+  - name: y
+  - name: m
