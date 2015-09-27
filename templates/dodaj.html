@@ -21,22 +21,22 @@
                     <br>
 
                     <label>*Začetek: </label>
-                    <input name="start" required>
+                    <input name="start" placeholder="9:00" type="text" required>
                     <br>
                     <br>
 
                     <label>*Konec: </label>
-                    <input name="end" required>
+                    <input name="end" placeholder="15:30 (če delate čez polnoč 1:00 pišite 25:00)" type="text" required>
                     <br>
                     <br>
 
                     <label>*Vrsta dela: </label>
-                    <input name="job_name" required>
+                    <input name="job_name" placeholder="Bar" type="text" required>
                     <br>
                     <br>
 
                     <label>*Urna postavka: </label>
-                    <input name="eur_hour" required>
+                    <input name="eur_hour" placeholder="4,5" type="text" required>
                     <br>
                     <br>
 
@@ -53,6 +53,8 @@
                 <p class="zvezda">Polja z * so obvezna</p>
             </div>
         </div>
+        <br>
+        <br>
         {% else %}
 
             <center><h1>Please login</h1></center>
