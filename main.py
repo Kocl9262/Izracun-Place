@@ -1,79 +1,29 @@
 # -*- coding: utf-8 -*-
 #!/usr/bin/env python
-import os
-import jinja2
 import webapp2
-from google.appengine.api import users
-from google.appengine.api import urlfetch
-from models import Salary
-
-
-template_dir = os.path.join(os.path.dirname(__file__), "templates")
-jinja_env = jinja2.Environment(loader=jinja2.FileSystemLoader(template_dir), autoescape=False)
-
-
-class BaseHandler(webapp2.RequestHandler):
-
-    def write(self, *a, **kw):
-        self.response.out.write(*a, **kw)
-
-    def render_str(self, template, **params):
-        t = jinja_env.get_template(template)
-        return t.render(params)
-
-    def render(self, template, **kw):
-        self.write(self.render_str(template, **kw))
-
-    def render_template(self, view_filename, params=None):
-        if not params:
-            params = {}
-
-        user = users.get_current_user()
-        if user:
-            logged_in = True
-            logout_url = users.create_logout_url("/")
-            params["logged_in"] = logged_in
-            params["user"] = user
-            params["logout_url"] = logout_url
-        else:
-            logged_in = False
-            login_url = users.create_login_url("/")
-            params["logged_in"] = logged_in
-            params["user"] = user
-            params["login_url"] = login_url
-
-        template = jinja_env.get_template(view_filename)
-        self.response.out.write(template.render(params))
-
-
-class MainHandler(BaseHandler):
-    def get(self):
-        self.render_template("index.html")
-
-
-class DodajHandler(BaseHandler):
-    def get(self):
-        self.render_template("dodaj.html")
-
-
-class DodanoHandler(BaseHandler):
-    def post(self):
-        date = self.request.get("date")
-        start = self.request.get("start")
-        end = self.request.get("end")
-        job_name = self.request.get("job_name")
-        eur_hour = self.request.get("eur_hour")
-        note = self.request.get("note")
-        user = str(users.get_current_user())
-
-        salary = Salary(date=date, start=start, end=end, job_name=job_name, eur_hour=eur_hour, note=note, user=user)
-        salary.put()
-
-        self.render_template("dodano.html")
+from BasicHandlers import MainHandler, DodajHandler, DodanoHandler, TableHandler, TableDelete
+from Pregled2015Handler import L2015Handler, Januar15Handler, Februar15Handler, Marec15Handler, April15Handler, Maj15Handler,\
+    Junij15Handler, Julij15Handler, Avgust15Handler, September15Handler, Oktober15Handler, November15Handler,\
+    December15Handler
 
 
 app = webapp2.WSGIApplication([
     webapp2.Route('/', MainHandler),
     webapp2.Route('/dodaj', DodajHandler),
     webapp2.Route('/dodano', DodanoHandler),
+    webapp2.Route('/table/<table_id:\d+>', TableHandler),
+    webapp2.Route('/table/<table_id:\d+>/delete', TableDelete),
+    webapp2.Route('/l2015', L2015Handler,  name="pregled"),
+    webapp2.Route('/januar15', Januar15Handler),
+    webapp2.Route('/februar15', Februar15Handler),
+    webapp2.Route('/marec15', Marec15Handler),
+    webapp2.Route('/april15', April15Handler),
+    webapp2.Route('/maj15', Maj15Handler),
+    webapp2.Route('/junij15', Junij15Handler),
+    webapp2.Route('/julij15', Julij15Handler),
+    webapp2.Route('/avgust15', Avgust15Handler),
+    webapp2.Route('/september15', September15Handler),
+    webapp2.Route('/oktober15', Oktober15Handler),
+    webapp2.Route('/november15', November15Handler),
+    webapp2.Route('/december15', December15Handler),
 ], debug=True)

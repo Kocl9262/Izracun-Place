@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{% block title %}Pregled{% endblock title %}
+
+{% block active2 %}active{% endblock active2 %}
+
+{% block content %}
+
+<div class="container">
+    <a href="/dodaj"><button>Dodaj</button></a>
+<div class="table-responsive">
+    <table class="table table-bordered table-condensed tabela_ozadje">
+        <tr class="table_title">
+            <th colspan="8">{% block tabletitle %}{% endblock tabletitle %}</th>
+        </tr>
+        <tr class="table_section">
+            <th>Del. mesto</th>
+            <th>Datum</th>
+            <th>Začetek</th>
+            <th>Konec</th>
+            <th>Ur</th>
+            <th>Opomba</th>
+            <th>Zaslužek</th>
+            <th>-15,5%</th>
+        </tr>
+        {% for info in salary %}
+        <tr class="table_data">
+            <td>{{info.job_name}}</td>
+            <td>{{info.date}}</td>
+            <td>{{info.start}}</td>
+            <td>{{info.end}}</td>
+            <td>{{info.total_hrs}}</td>
+            <td><a href="/table/{{ info.key.id() }}">{{info.note}}</a></td>
+            <td>{{info.daily}}€</td>
+            <td>{{info.dailywtax}}€</td>
+        </tr>
+        {% endfor %}
+        <tr class="table_section">
+            <td class="nevidna" colspan="3"></td>
+            <td class="table_section_barva">Skupaj ur:</td>
+            <td class="table_section_barva">{{month_total_hrs}}</td>
+            <td class="table_section_barva">Skupaj €:</td>
+            <td class="table_section_barva">{{month_total_daily}}€</td>
+            <td class="table_section_barva">{{month_total_dailywtax}}€</td>
+        </tr>
+    </table>
+</div>
+</div>
+<ul><a href="/l2015">2015</a>
+        <li><a href="/januar15">Januar</a></li>
+        <li><a href="/februar15">Februar</a></li>
+        <li><a href="/marec15">Marec</a></li>
+        <li><a href="/april15">April</a></li>
+        <li><a href="/maj15">Maj</a></li>
+        <li><a href="/junij15">Junij</a></li>
+        <li><a href="/julij15">Julij</a></li>
+        <li><a href="/avgust15">Avgust</a></li>
+        <li><a href="/september15">September</a></li>
+        <li><a href="/oktober15">Oktober</a></li>
+        <li><a href="/november15">November</a></li>
+        <li><a href="/december15">December</a></li>
+    </ul>
+{% endblock content %}

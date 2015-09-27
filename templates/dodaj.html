@@ -2,40 +2,63 @@
 
 {% block title %}Dodaj{% endblock title %}
 
+{% block active1 %}active{% endblock active1 %}
+
 {% block content %}
 
     <div class="container">
 
         {% if logged_in %}
+        <div class="row dodaj">
+            <div class="col-md-12">
+               <div class="dodaj_naslov">
+                    <h3>Prosimo vpišite podatke</h3>
+                </div>
+                <form method="post" action="/dodano">
+                    <label>*Datum dela: </label>
+                    <input id="calendar" name="date" type="text" required readonly>
+                    <br>
+                    <br>
 
-            <form method="post" action="/dodano">
-                <label>Datum dela: </label>
-                <input name="date" type="date" required>
+                    <label>*Začetek: </label>
+                    <input name="start" required>
+                    <br>
+                    <br>
 
-                <label>Začetek: </label>
-                <input name="start">
+                    <label>*Konec: </label>
+                    <input name="end" required>
+                    <br>
+                    <br>
 
-                <label>Konec: </label>
-                <input name="end">
+                    <label>*Vrsta dela: </label>
+                    <input name="job_name" required>
+                    <br>
+                    <br>
 
-                <label>Vrsta dela: </label>
-                <input name="job_name">
+                    <label>*Urna postavka: </label>
+                    <input name="eur_hour" required>
+                    <br>
+                    <br>
 
-                <label>Urna postavka: </label>
-                <input name="eur_hour">
 
-                <label>Opomba: </label>
-                <textarea name="note" rows="7" required></textarea>
+                    <label class="">Opomba: </label>
+                    <textarea name="note" rows="7"></textarea>
+                    <br>
+                    <br>
 
-                <button type="submit">Submit</button>
-            </form>
-
+                   <div class="button-right">
+                       <button type="submit" class="btn btn-default">Potrdi</button>
+                    </div>
+                </form>
+                <p class="zvezda">Polja z * so obvezna</p>
+            </div>
+        </div>
         {% else %}
 
             <center><h1>Please login</h1></center>
 
         {% endif %}
 
-    </div>
+</div>
 
 {% endblock content %}

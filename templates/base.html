@@ -1,21 +1,53 @@
 <!DOCTYPE html>
 <html>
-<head lang="en">
-    <meta name="Keywords" content="izracun place, izracun, placa">
-    <meta name="author" content="Sebastjan Koci, Marko Velkavrh">
-    <meta charset="UTF-8">
-    <title>{% block title %}{% endblock title %}</title>
-    <link rel="stylesheet" href="/assets/css/bootstrap.css">
-    <link rel="stylesheet" href="/assets/css/style.css">
-    <link rel="shortcut icon" href="/assets/favicon/b.png">
-    <script src="/assets/js/jquery-1.11.3.min.js"></script>
-    <script src="/assets/js/bootstrap.js"></script>
-</head>
+      <head lang="en">
+            <meta name="Keywords" content="izracun place, izracun, placa">
+            <meta name="author" content="Sebastjan Koci, Marko Velkavrh">
+            <meta charset="UTF-8">
+            <title>{% block title %}{% endblock title %}</title>
+            <link rel="stylesheet" href="/assets/css/bootstrap.css">
+            <link rel="stylesheet" href="/assets/css/style.css">
+            <link rel="stylesheet" href="/assets/css/jquery-ui.css">
+            <link rel="shortcut icon" href="/assets/favicon/b.png">
+            <script src="/assets/js/jquery-1.11.3.min.js"></script>
+            <script src="/assets/js/jquery-ui.min.js"></script>
+            <script src="/assets/js/bootstrap.js"></script>
+
+            <script>
+                  $(function() {
+                        $( "#calendar" ).datepicker();
+                  });
+            </script>
+
+      </head>
 <body>
 
     <!-- HEADER -->
 
+      <nav class="navbar navbar-inverse navbar-fixed-top glava">
+            <div class="container container-fluid">
+                  <!-- Brand and toggle get grouped for better mobile display -->
+                  <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                              <span class="sr-only">Toggle navigation</span>
+                              <span class="icon-bar"></span>
+                              <span class="icon-bar"></span>
+                              <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="/">Izračun Place / <small>ALPHA</small></a>
+                  </div>
+
+
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
           {% if logged_in %}
+
+      <ul class="nav navbar-nav navbar-right">
+            <li class="{% block active %}{% endblock active %}"><a href="/">Domov</a></li>
+            <li class="{% block active2 %}{% endblock active2 %}"><a href="/l2015">Plača</a></li>
+            <li><a href="{{ logout_url }}">Izpis</a></li>
+      </ul>
+
 
 
     <!-- zaenkrat prazno -->
@@ -24,17 +56,220 @@
           {% else %}
 
 
+      <ul class="nav navbar-nav navbar-right">
+            <li><a href="{{ login_url }}">Vpiši se</a></li>
+      </ul>
+            </div>
+
+
+
+
     <!-- če nisi logiran (logiraj se....) -->
 
 
           {% endif %}
+      </div>
+      </nav>
 
 
 
-    {% block content %}
-    {% endblock content %}
+      <div class="mgr-top"></div>
+
+
+      {% if logged_in %}
+
+          {% block content %}
+          {% endblock content %}
+
+
+      {% else %}
+
+      <div class="container base_vpis">
+
+            <h3 class="vpis">V primeru da še niste logirani v sistem, se prosimo vpišite.</h3>
+
+      </div>
+      {% endif %}
 
     <!-- DODAJ FOOTER -->
+
+            <footer class="footer">
+                  <div class="container">
+                        <div class="row">
+                                    <div class="col-md-4">
+                                          <ul class="avtorja">Najdeš naju na:
+
+                                                <li class="ime_avtor">Marko &nbsp; <a target="_blank" href="https://www.facebook.com/marko.velkavrh.39"><img class="fbico"  src="http://icons.iconarchive.com/icons/yootheme/social-bookmark/24/social-facebook-box-blue-icon.png"></a></li>
+                                                <li class="ime_avtor">Sebastjan &nbsp; <a target="_blank" href="https://www.facebook.com/sebastjan.koci"><img src="http://icons.iconarchive.com/icons/yootheme/social-bookmark/24/social-facebook-box-blue-icon.png"></a></li>
+                                          </ul>
+
+                                          <small>&copy; 2015 &mdash; Izključno za lastno uporabno</small>
+                                    </div>
+                                    <div class="col-md-2 col-md-offset-6">
+
+                                          <ul class="avtorja">Ostalo:
+
+                                                <li class="kontakt"><a href="#contact" data-toggle="modal">Pišite nam</a></li>
+                                                <li class="kontakt"><a href="#terms" data-toggle="modal">Splošni pogoji in uporaba</a></li>
+                                                <li class="kontakt"><a href="#faq" data-toggle="modal">FAQ</a></li>
+
+
+                                          </ul>
+
+
+                                    </div>
+                              </div>
+                        </div>
+
+                  <div class="modal fade" id="contact" role="dialog">
+                        <div class="modal-dialog">
+                              <div class="modal-content obrazec">
+                                    <form class="form-horizontal">
+                                          <div class="modal-header">
+                                                <h4>V primeru da se soočate s težavami na strani, ali pa imate kakšen dober predlog, nas kontaktirajte spodaj.</h4>
+                                          </div>
+                                          <div class="modal-body">
+
+                                                <div class="form-group">
+
+                                                      <label for="contact-name" class="col-md-2 control-label">Ime:</label>
+                                                      <div class="col-md-8">
+
+                                                            <input type="text" class="form-control" id="contact-name" placeholder="Polno Ime">
+
+                                                      </div>
+                                                </div>
+
+                                                <div class="form-group">
+
+                                                      <label for="contact-email" class="col-md-2 control-label">Email:</label>
+                                                      <div class="col-md-8">
+
+                                                            <input type="email" class="form-control" id="contact-email" placeholder="Vpišite email">
+
+                                                      </div>
+                                                </div>
+
+                                                <div class="form-group">
+
+                                                      <label for="contact-msg" class="col-md-2 control-label">Sporočilo:</label>
+                                                      <div class="col-md-8">
+                                                            <textarea class="form-control" rows="8" id="contact-msg"></textarea>
+
+                                                      </div>
+                                                </div>
+
+                                          </div>
+                                          <div class="modal-footer">
+                                                <a class="btn btn-default" data-dismiss="modal">Zapri</a>
+                                                <button class="btn btn-primary" type="submit">Pošlji</button>
+                                          </div>
+                                    </form>
+                              </div>
+                        </div>
+
+                  </div>
+
+                  <div class="modal fade" id="terms" role="dialog">
+                        <div class="modal-dialog">
+                              <div class="modal-content obrazec">
+                                    <form class="form-horizontal">
+                                          <div class="modal-header">
+
+                                                <h1>Pogoji uporabe spletnega mesta www.izračun_plače.si</h1>
+
+                                                <h2>Predstavitev</h2>
+
+                                                <p>Podatki, zbrani na tej spletni strani, so bili pripravljeni natančno in skrbno. Kljub temu obstaja možnost, da je pri vnosu vsebin ali na spletnem mestu prišlo do napak, za kar se obiskovalcem spletne strani opravičujemo. Če ste opazili napako, vas prosimo, da nas na to opozorite na elektronski naslov info@lumar.si. Z vstopom na to spletno mesto vsakdo, brez omejitev in zadržkov, sprejema Splošne pogoje uporabe spletne strani.</p>
+
+                                                <h3>Vsebina</h3>
+
+                                                <p>Vse vsebine, ki se nahajajo na spletni strani so informativnega značaja in so namenjene predvsem informiranju. Skrbnik spletnega mesta se obvezuje, da bo storil vse, kar je v njegovi moči, da bodo podatki na spletnem mestu resnični, zanesljivi in kakovostni. S tem pa ne odgovarja za morebitne tipkarske napake in za zamude ter pomanjkljivosti pri vnašanju ažurnih podatkov. Skrbnik si pridržuje pravico, da kadarkoli in brez predhodnega obvestila spremeni modele, specifikacije in razpoložljivost izdelkov.</p>
+
+                                                <h3>Uporaba piškotkov</h3>
+
+                                                <p>Skrbnik uporablja tehnologijo piškotkov, ki mu omogoča sledenje vaše poti po skrbnikovi spletni strani, registracijo aktivnosti uporabnikov na tej spletni strani ter ocenjevanje in izboljševanje spletne strani z namenom, da bi jo lahko naredili kar najbolj prijazno do uporabnikov. Sami lahko svoj spletni brskalnik nastavite tako, da izključite možnost dela s piškotki, ali tako, da vas opozori kadar bodo piškotki poslani.</p>
+
+
+                                                <h3>Osebni podatki/uporabniški podatki</h3>
+
+                                                <p>Podatke, ki jih Skrbniku spletnega mesta posredujete preko spletnih strani, bo uporabil izključno Skrbnik spletnega mesta z namenom oblikovanja ponudbe storitev in/ali izdelkov podjetja Lumar. V skladu z naravo takšnih informacij podjetje Lumar IG d.o.o. in Skrbnik spletnega mesta skušata po svojih najboljših močeh zagotavljati varno zbiranje, prenos in shranjevanje osebnih podatkov. Skrbnik spletnega mesta vaših osebnih podatkov ne bo posredoval tretjim pravnim ali fizičnim osebam, razen drugim entitetam v okviru mreže poslovno-storitvenih centrov podjetja Lumar. Kadarkoli lahko uveljavljate pravico do dostopa, do popravka ali preklica dovoljenja za uporabo svojih osebnih podatkov.</p>
+
+                                                <p>Skrbnik spletnega mesta upošteva naravo interneta kot medija, preko katerega lahko posamezniki posredujejo povratne informacije ali druge podatke v zvezi s skrbnikovo spletno stranjo. Skrbnik spletnega mesta si bo po svojih najboljših močeh prizadeval, da bodo tako posredovani podatki in povratne informacije, če bodo primerne in uporabne, tudi upoštevane. Skrbnik spletnega mesta ne prevzema nikakršne odgovornosti v zvezi z vsakršnimi, s strani uporabnika posredovanimi podatki, in si pridržuje pravico, da kakršnekoli takšne podatke odstrani iz svojih baz brez obrazložitve ali predhodnega obvestila.</p>
+
+                                                <h3>Avtorske pravice, industrijska lastnina in intelektualna lastnina</h3>
+
+                                                <p>Oblika te spletne strani in vse njene vsebine so zaščitene s pravicami industrijske in intelektualne lastnine. Informacije, besedila, slike ali druge grafične elemente, ki jih najdete na tej spletni strani, lahko uporabite izključno za svojo osebno, nekomercialno rabo in je ne smete, ne v celoti ne delno, reproducirati, spremeniti, razpošiljati, licencirati ali izdati v obliki publikacij v kakršnekoli namene, razen za ogledovanje, brez predhodnega pisnega dovoljenja skrbnika.</p>
+
+                                                <h3>Obvestilo o avtorskih pravicah, industrijski lastnini in intelektualni lastnini</h3>
+
+                                                <p>Predstavitev in vsa vsebina te strani (vključno s kodo spletne strani) je zaščitena s pravicami o industrijski in intelektualni lastnini. Informacije, besedilo, slike, kodo in grafični material, ki jih vsebuje ta stran, se lahko uporabljajo le za zasebno, nekomercialno rabo in jih ni dovoljeno reproducirati, spreminjati, prenašati, odobriti ali objaviti v celoti ali po delih za kakršenkoli namen brez prejšnjega pisnega soglasja družbe skrbnika spletnega mesta, razen za namene pregledovanja.</p>
+
+                                                <h3>Blagovne znamke</h3>
+
+                                                <p>Vse blagovne znamke, logotipi in storitvene znamke prikazane na tej strani, so last podjetja ??? ali tretje stranke. Njihova uporaba, trajen prenos na zasebni podatkovni vir, kopiranje ali distribucija na kakršen koli način brez pisnega dovoljenja podjetja ??? ali tretje stranke, glede na posamezni primer, je prepovedana.</p>
+
+                                                <h3>Hiperpovezave</h3>
+
+                                                <p>Skrbnikova spletna stran lahko vsebuje povezave na druge spletne strani, ki so povsem neodvisne od te spletne strani. Skrbnik nikakor ne jamči za točnost, popolnost ali verodostojnost informacij, vsebovanih v vsakršnih takšnih povezavah ali na drugih spletnih straneh, na katere vodijo povezave s skrbnikove spletne strani. Do takšnih spletnih strani dostopate na lastno odgovornost.</p>
+
+                                                <h3>Omejitev odgovornosti</h3>
+
+                                                <p>Skrbnik spletnega mesta izrecno zavrača vsakršno odgovornost za kakršnokoli neposredno, posredno, slučajno, posledično ali drugo škodo, ki je nastala kot posledica ali, ki je kakorkoli povezana z vašim dostopanjem do ali uporabe skrbnikove spletne strani, med drugim tudi za kakršnokoli izgubo ali škodo, nastalo kot posledica delovanja računalniških virusov ali vašega zanašanja na informacije, pridobljene preko skrbnikove spletne strani.</p>
+
+                                                <h3>Posodabljanje pogojev uporabe</h3>
+
+                                                <p>Skrbnik spletnega mesta si pridržuje pravico do spreminjanja splošnih pogojev brez predhodnega opozorila. Spremembe začnejo veljati takoj, ko so objavljene.</p>
+
+                                                <h3>Kontakt</h3>
+
+                                                <p>Plača d.o.o., Limbuška cesta 32 A, 2000 Maribor</p>
+
+                                                <h3>Objava sprememb</h3>
+
+                                                <p>Vsaka sprememba naše politike o varovanju osebnih podatkov bo objavljena v tej izjavi o varovanju osebnih podatkov, na vstopni strani www.lumar.si in na drugih ustreznih mestih.</p>
+
+                                                <p>Zadnja posodobitev: september 2015</p>
+
+                                          </div>
+
+                                          <div class="modal-footer">
+                                                <a class="btn btn-default" data-dismiss="modal">Zapri</a>
+                                          </div>
+                                    </form>
+                              </div>
+                        </div>
+
+                  </div>
+
+                        <div class="modal fade" id="faq" role="dialog">
+                              <div class="modal-dialog">
+                                    <div class="modal-content obrazec">
+                                          <form class="form-horizontal">
+                                                <div class="modal-header">
+
+                                                      <h1>Pogoji uporabe spletnega mesta.</h1>
+
+                                                </div>
+
+                                                      <div class="modal-footer">
+                                                            <a class="btn btn-default" data-dismiss="modal">Zapri</a>
+                                                      </div>
+
+                                          </form>
+
+                                    </div>
+
+                              </div>
+                        </div>
+
+
+      </footer>
+
+
+
+
+
 
 </body>
 </html>

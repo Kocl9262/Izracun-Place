@@ -12,3 +12,17 @@ class Salary(ndb.Model):
     eur_hour = ndb.StringProperty()
     note = ndb.StringProperty()
     user = ndb.StringProperty()
+    total_hrs = ndb.StringProperty()
+    daily = ndb.StringProperty()
+    dailywtax = ndb.StringProperty()
+    d = ndb.StringProperty()
+    m = ndb.StringProperty()
+    y = ndb.StringProperty()
+
+
+class Profil(ndb.Model):
+    created = ndb.DateTimeProperty(auto_now_add=True)
+    ime = ndb.StringProperty()
+    priimek = ndb.StringProperty()
+    datum_rojstva = ndb.StringProperty()
+    admin = ndb.BooleanProperty(default=False)

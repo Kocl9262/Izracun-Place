@@ -1,3 +1,216 @@
 body {
-    background-color: lightblue;
+    background: url("/assets/img/green.jpg") no-repeat fixed;
 }
+
+.index {
+    background: #434343;
+    border-radius: 10px;
+    box-shadow: 10px 10px 15px #211d1d;
+    color: aliceblue;
+    margin:  0 auto;
+
+
+}
+
+
+.glava {
+    background: url("/assets/img/header2.jpg");
+    background-size: cover;
+}
+
+.nav.navbar-nav li a {
+    color: aliceblue;
+}
+
+.navbar-inverse .navbar-brand {
+    color: #c7c7c7;
+}
+
+.navbar-inverse .navbar-brand small {
+    font-size: 8px;
+}
+
+.avtorja {
+    margin-top: 12px;
+}
+
+.ime_avtor {
+    list-style:none;
+    background-repeat:no-repeat;
+
+}
+
+
+.fbico {
+    margin-left: -5px;
+}
+
+
+
+.hero_area {
+    margin-top: 60px;
+}
+
+
+
+.mgr-top {
+
+    margin-top: 100px;
+
+}
+
+
+.footer {
+    color: aliceblue;
+    background: url("/assets/img/header2.jpg");
+    width: 100%;
+    margin-top: 1000px;
+    background-size: cover;
+
+}
+
+.dodaj_naslov {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.index_zaposlitev {
+    margin-bottom: 20px;
+    text-align: center;
+
+}
+
+.index_h4 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.slike_div {
+    width: 100%;
+}
+
+.slike_pos {
+    margin-bottom: 15px;
+    list-style: none;
+}
+
+.dodaj {
+    box-shadow: 10px 10px 15px #211d1d;
+    color: aliceblue;
+    margin:  0 auto;
+    width: 70%;
+    background-color: #434343;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+label {
+    margin-left: 20px;
+    width: 120px;
+
+}
+
+.dodaj input {
+    color:black;
+    width: 70%;
+}
+
+textarea {
+    color:black;
+    vertical-align: top;
+    width: 70%;
+    resize: none;
+}
+
+.button-right {
+    margin-top: 10px;
+
+}
+
+
+.dodano a {
+    color: aliceblue;
+}
+.button-right {
+    margin-left: 18px;
+}
+
+.zvezda {
+    text-align: right;
+}
+
+.dodano {
+    background-color: #434343;
+    text-align: center;
+    box-shadow: 10px 10px 15px #211d1d;
+    color: aliceblue;
+    width: 70%;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.tabela_ozadje {
+    background-color: transparent;
+    color: aliceblue;
+}
+
+table .table_section .table_section_barva {
+    background-color: #262424;
+
+}
+
+
+table .table_section td {
+    text-align: center;
+    background-color: #262424;
+}
+
+table .table_section th {
+    text-align: center;
+    background-color: #262424;
+}
+
+
+table .table_title th {
+    text-align: center;
+    font-size: 2em;
+    background-color: #262424;
+}
+
+table .table_data td {
+    text-align: center;
+    background-color: #434343;
+}
+
+table .table_section .nevidna {
+    border-left-color: transparent;
+    border-bottom-color: transparent;
+    background-color: transparent;
+
+}
+
+.modal-content {
+    background-color: #434343;
+    text-align: center;
+}
+
+.kontakt {
+    margin-bottom: 5px;
+    list-style-type: square;
+
+}
+
+.base_vpis {
+    width: 50%;
+    margin: 0 auto;
+    padding: 40px;
+    background-color: #434343;
+    border-radius: 5px;
+}
+
+.vpis {
+    color: aliceblue;
+    text-align: center;
+    letter-spacing: 5px;
+}
+
