@@ -7,11 +7,12 @@
 {% block content %}
 
 <div class="container">
-    <a href="/dodaj"><button>Dodaj</button></a>
+    <div class="row">
+    <div class="col-md-10">     
 <div class="table-responsive">
     <table class="table table-bordered table-condensed tabela_ozadje">
         <tr class="table_title">
-            <th colspan="8">{% block tabletitle %}{% endblock tabletitle %}</th>
+            <th colspan="8"><a href="/dodaj"><button type="button" class="btn btn-default gumb_table">Dodaj</button></a>{% block tabletitle %}{% endblock tabletitle %}</th>
         </tr>
         <tr class="table_section">
             <th>Del. mesto</th>
@@ -45,12 +46,13 @@
         </tr>
     </table>
 </div>
-</div>
+    </div>
 
-<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+    <div class="col-md-2">
+    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
   <div class="panel panel-default">
     <div class="panel-heading" role="tab" id="headingOne">
-      <h4 class="panel-title">
+      <h4 class="panel-title sidebar_glava">
         <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
           2015
         </a>
@@ -77,5 +79,7 @@
     </div>
   </div>
 </div>
-
+</div>
+</div>
+</div>
 {% endblock content %}
