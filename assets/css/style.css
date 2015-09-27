@@ -1,6 +1,21 @@
-body {
+
+html, body {
     background: url("/assets/img/green.jpg") no-repeat fixed;
+    height: 100%;
 }
+
+body {
+  display: table;
+  width: 100%;
+}
+
+.page-row {
+  display: table-row;
+  height: 1px;
+}
+
+.page-row-expanded { height: 100%; }
+
 
 .index {
     background: #434343;
@@ -60,17 +75,19 @@ body {
 }
 
 
-.footer {
+.footer-wrapper {
+    
     color: aliceblue;
     background: url("/assets/img/header2.jpg");
+    background-size: contain;
     width: 100%;
-    margin-top: 1000px;
-    background-size: cover;
-
+   
+    
 }
 
+
 .dodaj_naslov {
-    text-align: center;
+    
     margin-bottom: 20px;
 }
 
@@ -80,13 +97,15 @@ body {
 
 }
 
-.index_h4 {
+.index_slike {
+    font-size: 20px;
     text-align: center;
-    margin-bottom: 10px;
+    
 }
 
 .slike_div {
     width: 100%;
+   
 }
 
 .slike_pos {
@@ -213,4 +232,42 @@ table .table_section .nevidna {
     text-align: center;
     letter-spacing: 5px;
 }
+
+.gumb_table {
+    float: left;
+    margin-top: 3px;
+}
+
+.tabela_sidebar {
+    color: aliceblue;
+    
+}
+
+#headingOne {
+    background-color: #262424;
+
+    
+}
+
+.panel-body {
+    background-color: #434343;
+    
+
+}
+
+.panel-body ul li {
+    color: aliceblue;
+}
+
+.panel-body ul li a {
+    color: aliceblue;
+}
+
+.sidebar_glava {
+    text-align: center;
+    color: aliceblue;
+    
+    
+}
+
 

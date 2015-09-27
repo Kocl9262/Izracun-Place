@@ -9,21 +9,13 @@
             <link rel="stylesheet" href="/assets/css/style.css">
             <link rel="stylesheet" href="/assets/css/jquery-ui.css">
             <link rel="shortcut icon" href="/assets/favicon/b.png">
-            <script src="/assets/js/jquery-1.11.3.min.js"></script>
-            <script src="/assets/js/jquery-ui.min.js"></script>
-            <script src="/assets/js/bootstrap.js"></script>
-
-            <script>
-                  $(function() {
-                        $( "#calendar" ).datepicker();
-                  });
-            </script>
-
+            
+            
       </head>
 <body>
 
     <!-- HEADER -->
-
+    <header class="page-row">
       <nav class="navbar navbar-inverse navbar-fixed-top glava">
             <div class="container container-fluid">
                   <!-- Brand and toggle get grouped for better mobile display -->
@@ -70,8 +62,8 @@
           {% endif %}
       </div>
       </nav>
-
-
+    </header>
+    <main class="page-row page-row-expanded">
 
       <div class="mgr-top"></div>
 
@@ -90,10 +82,10 @@
 
       </div>
       {% endif %}
-
+    </main>
     <!-- DODAJ FOOTER -->
-
-            <footer class="footer">
+        <footer class="page-row">
+            <div class="footer-wrapper">
                   <div class="container">
                         <div class="row">
                                     <div class="col-md-4">
@@ -262,12 +254,16 @@
 
                               </div>
                         </div>
+                </div>
+
+        </footer>
 
 
-      </footer>
 
-
-
+<script src="/assets/js/jquery-1.11.3.min.js"></script>
+<script src="/assets/js/jquery-ui.min.js"></script>
+<script src="/assets/js/koledar.js"></script>
+<script src="/assets/js/bootstrap.js"></script>
 
 
 
