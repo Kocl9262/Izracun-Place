@@ -4,26 +4,27 @@
             <meta name="Keywords" content="izracun place, izracun, placa">
             <meta name="author" content="Sebastjan Koci, Marko Velkavrh">
             <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
             <title>{% block title %}{% endblock title %}</title>
             <link rel="stylesheet" href="/assets/css/bootstrap.css">
             <link rel="stylesheet" href="/assets/css/style.css">
             <link rel="stylesheet" href="/assets/css/jquery-ui.css">
             <link rel="shortcut icon" href="/assets/favicon/b.png">
-            <script src="/assets/js/jquery-1.11.3.min.js"></script>
-            <script src="/assets/js/jquery-ui.min.js"></script>
-            <script src="/assets/js/bootstrap.js"></script>
-
-            <script>
-                  $(function() {
-                        $( "#calendar" ).datepicker();
-                  });
-            </script>
-
+          
+            <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+            <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+            <!--[if lt IE 9]>
+                <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+                <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+            <![endif]-->
+            
+            
       </head>
 <body>
 
     <!-- HEADER -->
-
+    <header class="page-row">
       <nav class="navbar navbar-inverse navbar-fixed-top glava">
             <div class="container container-fluid">
                   <!-- Brand and toggle get grouped for better mobile display -->
@@ -43,6 +44,9 @@
           {% if logged_in %}
 
       <ul class="nav navbar-nav navbar-right">
+          {% if admin %}
+            <li class="{% block active3 %}{% endblock active3 %}"><a href="/admin">Admin</a></li>
+          {% endif %}
             <li class="{% block active %}{% endblock active %}"><a href="/">Domov</a></li>
             <li class="{% block active2 %}{% endblock active2 %}"><a href="/l2015">Plača</a></li>
             <li><a href="{{ logout_url }}">Izpis</a></li>
@@ -70,8 +74,8 @@
           {% endif %}
       </div>
       </nav>
-
-
+    </header>
+    <main class="page-row page-row-expanded">
 
       <div class="mgr-top"></div>
 
@@ -90,13 +94,13 @@
 
       </div>
       {% endif %}
-
+    </main>
     <!-- DODAJ FOOTER -->
-
-            <footer class="footer">
+        <footer class="page-row">
+            <div class="footer-wrapper">
                   <div class="container">
                         <div class="row">
-                                    <div class="col-md-4">
+                                    <div class="col-sm-4">
                                           <ul class="avtorja">Najdeš naju na:
 
                                                 <li class="ime_avtor">Marko &nbsp; <a target="_blank" href="https://www.facebook.com/marko.velkavrh.39"><img class="fbico"  src="http://icons.iconarchive.com/icons/yootheme/social-bookmark/24/social-facebook-box-blue-icon.png"></a></li>
@@ -105,7 +109,7 @@
 
                                           <small>&copy; 2015 &mdash; Izključno za lastno uporabno</small>
                                     </div>
-                                    <div class="col-md-2 col-md-offset-6">
+                                    <div class="col-sm-2 col-sm-offset-6">
 
                                           <ul class="avtorja">Ostalo:
 
@@ -124,7 +128,7 @@
                   <div class="modal fade" id="contact" role="dialog">
                         <div class="modal-dialog">
                               <div class="modal-content obrazec">
-                                    <form class="form-horizontal">
+                                    <form class="form-horizontal" method="post" action="/poslano">
                                           <div class="modal-header">
                                                 <h4>V primeru da se soočate s težavami na strani, ali pa imate kakšen dober predlog, nas kontaktirajte spodaj.</h4>
                                           </div>
@@ -133,28 +137,28 @@
                                                 <div class="form-group">
 
                                                       <label for="contact-name" class="col-md-2 control-label">Ime:</label>
-                                                      <div class="col-md-8">
+                                                      <div class="col-sm-8">
 
-                                                            <input type="text" class="form-control" id="contact-name" placeholder="Polno Ime">
-
-                                                      </div>
-                                                </div>
-
-                                                <div class="form-group">
-
-                                                      <label for="contact-email" class="col-md-2 control-label">Email:</label>
-                                                      <div class="col-md-8">
-
-                                                            <input type="email" class="form-control" id="contact-email" placeholder="Vpišite email">
+                                                            <input name="name" type="text" class="form-control" id="contact-name" placeholder="Polno Ime">
 
                                                       </div>
                                                 </div>
 
                                                 <div class="form-group">
 
-                                                      <label for="contact-msg" class="col-md-2 control-label">Sporočilo:</label>
-                                                      <div class="col-md-8">
-                                                            <textarea class="form-control" rows="8" id="contact-msg"></textarea>
+                                                      <label for="contact-email" class="col-sm-2 control-label">Email:</label>
+                                                      <div class="col-sm-8">
+
+                                                            <input name="email" type="email" class="form-control" id="contact-email" placeholder="Vpišite email">
+
+                                                      </div>
+                                                </div>
+
+                                                <div class="form-group">
+
+                                                      <label for="contact-msg" class="col-sm-2 control-label">Sporočilo:</label>
+                                                      <div class="col-sm-8">
+                                                            <textarea name="message" class="form-control" rows="8" id="contact-msg"></textarea>
 
                                                       </div>
                                                 </div>
@@ -262,12 +266,16 @@
 
                               </div>
                         </div>
+                </div>
+
+        </footer>
 
 
-      </footer>
 
-
-
+<script src="/assets/js/jquery-1.11.3.min.js"></script>
+<script src="/assets/js/jquery-ui.min.js"></script>
+<script src="/assets/js/koledar.js"></script>
+<script src="/assets/js/bootstrap.js"></script>
 
 
 

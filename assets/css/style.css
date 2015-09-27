@@ -1,6 +1,22 @@
-body {
+
+html, body {
     background: url("/assets/img/green.jpg") no-repeat fixed;
+    height: 100%;
+    background-size: cover;
 }
+
+body {
+  display: table;
+  width: 100%;
+}
+
+.page-row {
+  display: table-row;
+  height: 1px;
+}
+
+.page-row-expanded { height: 100%; }
+
 
 .index {
     background: #434343;
@@ -54,23 +70,20 @@ body {
 
 
 .mgr-top {
-
     margin-top: 100px;
-
 }
 
 
-.footer {
+.footer-wrapper {
+    
     color: aliceblue;
     background: url("/assets/img/header2.jpg");
-    width: 100%;
-    margin-top: 1000px;
     background-size: cover;
-
+    width: 100%;
 }
 
 .dodaj_naslov {
-    text-align: center;
+    
     margin-bottom: 20px;
 }
 
@@ -80,14 +93,13 @@ body {
 
 }
 
-.index_h4 {
+.index_slike {
+    
+    font-size: 18px;
     text-align: center;
-    margin-bottom: 10px;
+    
 }
 
-.slike_div {
-    width: 100%;
-}
 
 .slike_pos {
     margin-bottom: 15px;
@@ -214,3 +226,84 @@ table .table_section .nevidna {
     letter-spacing: 5px;
 }
 
+.gumb_table {
+    float: left;
+    margin-top: 3px;
+}
+
+.tabela_sidebar {
+    color: aliceblue;
+    
+}
+
+#headingOne {
+    background-color: #262424;
+
+    
+}
+
+.panel-body {
+    background-color: #434343;
+    
+
+}
+
+.panel-body ul li {
+    color: aliceblue;
+}
+
+.panel-body ul li a {
+    color: aliceblue;
+}
+
+.sidebar_glava {
+    text-align: center;
+    color: aliceblue;
+    
+    
+}
+
+.admin_levo {
+    float: left;
+    color: aquamarine;
+}
+
+.admin_desno {
+    float: right;
+    color: aquamarine;
+}
+
+.admin {
+    clear: both;
+    text-align: left;
+    color: aliceblue;
+}
+
+.kontakt_info {
+    color: aquamarine;
+}
+
+.kontakt_admin {
+    background-color: #434343;
+    border-radius: 5px;
+    width: 80%;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+.admin_linki {
+    background-color: #434343;
+    border-radius: 5px;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+.admin_linki ul li {
+    color: aliceblue;
+    margin-bottom: 3px;
+    
+}
+
+.admin_linki ul li a {
+    color: aliceblue;
+}
