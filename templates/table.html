@@ -6,17 +6,17 @@
 
 {% block content %}
 
-<p>created:{{table.created}}</p>
-<p>datum:{{table.date}}</p>
-<p>začetek dela:{{table.start}}</p>
-<p>konec dela:{{table.end}}</p>
-<p>vrsta dela:{{table.job_name}}</p>
-<p>urna postavka:{{table.eur_hour}}</p>
-<p>Opomba:{{table.note}}</p>
-<p>user:{{table.user}}</p>
-<p>zaslužek tega dneva:{{table.daily}}</p>
-<p>taslužek tega dneva - 15,5%:{{table.dailywtax}}</p>
+    <p>created:{{table.created}}</p>
+    <p>datum:{{table.date}}</p>
+    <p>začetek dela:{{table.start}}</p>
+    <p>konec dela:{{table.end}}</p>
+    <p>vrsta dela:{{table.job_name}}</p>
+    <p>urna postavka:{{table.eur_hour}}</p>
+    <p>Opomba:{{table.note}}</p>
+    <p>user:{{table.user}}</p>
+    <p>zaslužek tega dneva:{{table.daily}}</p>
+    <p>taslužek tega dneva - 15,5%:{{table.dailywtax}}</p>
 
-Želiš izbrisati ta dan? <a href="/table/{{ table.key.id() }}/delete"><button>da</button></a>
+    Želiš izbrisati ta dan? <a href="/table/{{ table.key.id() }}/delete"><button>da</button></a>
 
 {% endblock content %}

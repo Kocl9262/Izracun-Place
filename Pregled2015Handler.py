@@ -1,8 +1,5 @@
 # -*- coding: utf-8 -*-
 #!/usr/bin/env python
-import os
-import jinja2
-import webapp2
 from google.appengine.api import users
 from models import Salary
 from BasicHandlers import BaseHandler
