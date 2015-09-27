@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}Admin{% endblock title %}
+
+{% block active3 %}active{% endblock active3 %}
+
+{% block content %}
+
+    {% if admin %}
+
+        <h1>Ja ti pa si en butl ;)</h1>
+
+        <a href="/kontakt"><button>Sporočila</button></a>
+
+
+    {% else %}
+
+        <div class="container base_vpis">
+            <h3 class="vpis">Ja poba, ti pa nisi admin...</h3>
+        </div>
+
+    {% endif %}
+
+{% endblock content %}

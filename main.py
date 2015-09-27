@@ -1,10 +1,11 @@
 # -*- coding: utf-8 -*-
 #!/usr/bin/env python
 import webapp2
-from BasicHandlers import MainHandler, DodajHandler, DodanoHandler, TableHandler, TableDelete
-from Pregled2015Handler import L2015Handler, Januar15Handler, Februar15Handler, Marec15Handler, April15Handler, Maj15Handler,\
-    Junij15Handler, Julij15Handler, Avgust15Handler, September15Handler, Oktober15Handler, November15Handler,\
-    December15Handler
+from BasicHandlers import MainHandler, DodajHandler, DodanoHandler, TableHandler, TableDelete, AdminHandler,\
+    SporociloOddano, KontaktHandler
+from Pregled2015Handler import L2015Handler, Januar15Handler, Februar15Handler, Marec15Handler, April15Handler,\
+    Maj15Handler, Junij15Handler, Julij15Handler, Avgust15Handler, September15Handler, Oktober15Handler,\
+    November15Handler, December15Handler
 
 
 app = webapp2.WSGIApplication([
@@ -26,4 +27,7 @@ app = webapp2.WSGIApplication([
     webapp2.Route('/oktober15', Oktober15Handler),
     webapp2.Route('/november15', November15Handler),
     webapp2.Route('/december15', December15Handler),
+    webapp2.Route('/admin', AdminHandler),
+    webapp2.Route('/poslano', SporociloOddano),
+    webapp2.Route('/kontakt', KontaktHandler),
 ], debug=True)

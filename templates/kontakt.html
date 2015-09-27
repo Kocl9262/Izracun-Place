@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}Sporočila{% endblock title %}
+
+{% block content %}
+
+    {% if admin %}
+        {% for item in message %}
+
+            <div class="container base_vpis">
+                <p class="vpis">Čas: {{ item.created.strftime('%d.%m.%Y at %H:%M:%S') }}</p>
+                <p class="vpis">Google username: {{ item.user }}</p>
+                <p class="vpis">Ime: {{ item.name }}</p>
+                <p class="vpis">Email: {{ item.email }}</p>
+                <p class="vpis">Sporočilo: {{ item.message }}</p>
+            </div>
+
+        {% endfor %}
+    {% else %}
+
+        <div class="container base_vpis">
+            <h3 class="vpis">Ja poba, ti pa nisi admin...</h3>
+        </div>
+
+    {% endif %}
+
+{% endblock content %}
