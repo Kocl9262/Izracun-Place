@@ -1,27 +1,29 @@
-{% extends "base.html" %}
+{% extends "admin_base.html" %}
 
 {% block title %}Sporočila{% endblock title %}
 
-{% block content %}
+{% block content2 %}
 
     {% if admin %}
         {% for item in message %}
 
-            <div class="container base_vpis">
-                <p class="vpis">Čas: {{ item.created.strftime('%d.%m.%Y at %H:%M:%S') }}</p>
-                <p class="vpis">Google username: {{ item.user }}</p>
-                <p class="vpis">Ime: {{ item.name }}</p>
-                <p class="vpis">Email: {{ item.email }}</p>
-                <p class="vpis">Sporočilo: {{ item.message }}</p>
+            <div class="container kontakt_admin">
+                <div>
+                    <p class="admin_levo"><small>{{ item.created.strftime('%d.%m.%Y ob %H:%M:%S') }}</small></p>
+                    <p class="admin_desno">Username: <small>{{ item.user }}</small></p>
+                </div><br><hr>
+                <p class="admin"><b><span class="kontakt_info">Ime:</span></b> <em>{{ item.name }}</em></p>
+                <p class="admin"><b><span class="kontakt_info">Email:</span></b> <em>{{ item.email }}</em></p>
+                <p class="admin"><b><span class="kontakt_info">Sporočilo:</span></b> {{ item.message }}</p>
             </div>
 
         {% endfor %}
     {% else %}
 
         <div class="container base_vpis">
-            <h3 class="vpis">Ja poba, ti pa nisi admin...</h3>
+            <h3 class="admin">Ja poba, ti pa nisi admin...</h3>
         </div>
 
     {% endif %}
 
-{% endblock content %}
+{% endblock content2 %}

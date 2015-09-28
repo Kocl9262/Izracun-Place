@@ -94,15 +94,12 @@ body {
 }
 
 .index_slike {
-    font-size: 20px;
+    
+    font-size: 18px;
     text-align: center;
     
 }
 
-.slike_div {
-    width: 100%;
-   
-}
 
 .slike_pos {
     margin-bottom: 15px;
@@ -264,4 +261,49 @@ table .table_section .nevidna {
     color: aliceblue;
     
     
+}
+
+.admin_levo {
+    float: left;
+    color: aquamarine;
+}
+
+.admin_desno {
+    float: right;
+    color: aquamarine;
+}
+
+.admin {
+    clear: both;
+    text-align: left;
+    color: aliceblue;
+}
+
+.kontakt_info {
+    color: aquamarine;
+}
+
+.kontakt_admin {
+    background-color: #434343;
+    border-radius: 5px;
+    width: 80%;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+.admin_linki {
+    background-color: #434343;
+    border-radius: 5px;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+.admin_linki ul li {
+    color: aliceblue;
+    margin-bottom: 3px;
+    
+}
+
+.admin_linki ul li a {
+    color: aliceblue;
 }

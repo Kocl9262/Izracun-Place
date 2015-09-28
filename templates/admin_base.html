@@ -7,14 +7,26 @@
 {% block content %}
 
     {% if admin %}
+        <div class="container">
+            <div class="row">
+            <div class="col-sm-2">
+       <div class="admin_linki">
+        <ul>
+            <li><a href="/kontakt">Sporočila</a></li>  
+            <li><a href="/kontakt">Sporočila</a></li>  
+            <li><a href="/kontakt">Sporočila</a></li>  
+            <li><a href="/kontakt">Sporočila</a></li>  
+        </ul>
+        </div>
+            </div>
+        <div class="col-sm-10">
 
-        <h1>Ja ti pa si en butl ;)</h1>
-
-        <a href="/kontakt"><button>Sporočila</button></a>
         {% block content2 %}
 
         {% endblock content2 %}
-
+        </div>
+        </div>
+        </div>
     {% else %}
 
         <div class="container base_vpis">

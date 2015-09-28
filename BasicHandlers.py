@@ -69,6 +69,9 @@ class DodanoHandler(BaseHandler):
         note = self.request.get("note")
         user = str(users.get_current_user())
 
+        if note.find("") != -1:
+            note = "none"
+
         if eur_hour.find(",") != -1:
             eur_hour = eur_hour.replace(",", ".")
 
@@ -163,3 +166,31 @@ class TableDelete(BaseHandler):
         table = Salary.get_by_id(int(table_id))
         table.key.delete()
         return self.redirect_to("pregled")
+
+
+class AdminHandler(BaseHandler):
+    def get(self):
+
+        self.render_template("admin.html")
+
+
+class SporociloOddano(BaseHandler):
+    def post(self):
+        name = self.request.get("name")
+        email = self.request.get("email")
+        message = self.request.get("message")
+        user = str(users.get_current_user())
+
+        kontakt = Kontakt(name=name, email=email, message=message, user=user)
+        kontakt.put()
+
+        self.render_template("sporocilo_oddano.html")
+
+
+class KontaktHandler(BaseHandler):
+    def get(self):
+        message = Kontakt.query().order(-Kontakt.created).fetch()
+
+        params = {"message": message}
+
+        self.render_template("kontakt.html", params)
