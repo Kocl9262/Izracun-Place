@@ -69,7 +69,7 @@ class DodanoHandler(BaseHandler):
         note = self.request.get("note")
         user = str(users.get_current_user())
 
-        if note.find("") != -1:
+        if note == "":
             note = "none"
 
         if eur_hour.find(",") != -1:
