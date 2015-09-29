@@ -6,17 +6,18 @@ html, body {
 }
 
 body {
-  display: table;
-  width: 100%;
+    display: table;
+    width: 100%;
 }
 
 .page-row {
-  display: table-row;
-  height: 1px;
+    display: table-row;
+    height: 1px;
 }
 
-.page-row-expanded { height: 100%; }
-
+.page-row-expanded {
+    height: 100%;
+}
 
 .index {
     background: #434343;
@@ -24,10 +25,7 @@ body {
     box-shadow: 10px 10px 15px #211d1d;
     color: aliceblue;
     margin:  0 auto;
-
-
 }
-
 
 .glava {
     background: url("/assets/img/header2.jpg");
@@ -53,29 +51,21 @@ body {
 .ime_avtor {
     list-style:none;
     background-repeat:no-repeat;
-
 }
-
 
 .fbico {
     margin-left: -5px;
 }
 
-
-
 .hero_area {
     margin-top: 60px;
 }
-
-
 
 .mgr-top {
     margin-top: 100px;
 }
 
-
 .footer-wrapper {
-    
     color: aliceblue;
     background: url("/assets/img/header2.jpg");
     background-size: cover;
@@ -83,23 +73,18 @@ body {
 }
 
 .dodaj_naslov {
-    
     margin-bottom: 20px;
 }
 
 .index_zaposlitev {
     margin-bottom: 20px;
     text-align: center;
-
 }
 
 .index_slike {
-    
     font-size: 18px;
     text-align: center;
-    
 }
-
 
 .slike_pos {
     margin-bottom: 15px;
@@ -119,7 +104,6 @@ body {
 label {
     margin-left: 20px;
     width: 120px;
-
 }
 
 .dodaj input {
@@ -136,13 +120,12 @@ textarea {
 
 .button-right {
     margin-top: 10px;
-
 }
-
 
 .dodano a {
     color: aliceblue;
 }
+
 .button-right {
     margin-left: 18px;
 }
@@ -168,9 +151,7 @@ textarea {
 
 table .table_section .table_section_barva {
     background-color: #262424;
-
 }
-
 
 table .table_section td {
     text-align: center;
@@ -181,7 +162,6 @@ table .table_section th {
     text-align: center;
     background-color: #262424;
 }
-
 
 table .table_title th {
     text-align: center;
@@ -198,7 +178,6 @@ table .table_section .nevidna {
     border-left-color: transparent;
     border-bottom-color: transparent;
     background-color: transparent;
-
 }
 
 .modal-content {
@@ -209,7 +188,6 @@ table .table_section .nevidna {
 .kontakt {
     margin-bottom: 5px;
     list-style-type: square;
-
 }
 
 .base_vpis {
@@ -233,19 +211,14 @@ table .table_section .nevidna {
 
 .tabela_sidebar {
     color: aliceblue;
-    
 }
 
 #headingOne {
     background-color: #262424;
-
-    
 }
 
 .panel-body {
     background-color: #434343;
-    
-
 }
 
 .panel-body ul li {
@@ -259,8 +232,6 @@ table .table_section .nevidna {
 .sidebar_glava {
     text-align: center;
     color: aliceblue;
-    
-    
 }
 
 .admin_levo {
@@ -301,7 +272,6 @@ table .table_section .nevidna {
 .admin_linki ul li {
     color: aliceblue;
     margin-bottom: 3px;
-    
 }
 
 .admin_linki ul li a {
