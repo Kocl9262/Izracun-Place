@@ -20,7 +20,7 @@
             <th>Začetek</th>
             <th>Konec</th>
             <th>Ur</th>
-            <th>Opomba</th>
+            <th class="opomba">Opomba</th>
             <th>Zaslužek</th>
             <th>-15,5%</th>
         </tr>
@@ -31,7 +31,7 @@
             <td>{{info.start}}</td>
             <td>{{info.end}}</td>
             <td>{{info.total_hrs}}</td>
-            <td><a href="/table/{{ info.key.id() }}">{{info.note}}</a></td>
+            <td class="opomba"><a href="/table/{{ info.key.id() }}">{{info.note}}</a></td>
             <td>{{info.daily}}€</td>
             <td>{{info.dailywtax}}€</td>
         </tr>

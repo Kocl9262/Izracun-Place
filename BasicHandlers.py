@@ -69,6 +69,9 @@ class DodanoHandler(BaseHandler):
         note = self.request.get("note")
         user = str(users.get_current_user())
 
+        if note == "":
+            note = "brez"
+
         if eur_hour.find(",") != -1:
             eur_hour = eur_hour.replace(",", ".")
 
