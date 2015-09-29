@@ -5,18 +5,31 @@
 {% block active1 %}active{% endblock active1 %}
 
 {% block content %}
+<div class="container kontakt_user">
+    <div class="row">
+    <div class="col-sm-12">
+    <p class="user_levo">created: {{ table.created.strftime('%d.%m.%Y ob %H:%M:%S') }}</p>
+    <p class="user_desno">datum: {{ table.date }}</p>
+        <br><hr>
+    <p class="user_head">{{ table.user }}</p>
+    <p class="user"><span class="podatki_span">Začetek dela:</span> {{ table.start }}</p>
+    <p class="user"><span class="podatki_span">Konec dela:</span> {{ table.end }}</p>
+    <p class="user"><span class="podatki_span">Skupaj ur:</span> {{ table.total_hrs }}ur</p>
+    <p class="user"><span class="podatki_span">Vrsta dela:</span> {{ table.job_name }}</p>
+    <p class="user"><span class="podatki_span">Urna postavka:</span> {{ table.eur_hour }}€</p>
+    <p class="user"><span class="podatki_span">Zaslužek:</span> {{ table.daily }}€</p>
+    <p class="user"><span class="podatki_span">Zaslužek (-15,5%):</span> {{ table.dailywtax }}€</p>
+    <p class="user"><span class="podatki_span">Opomba:</span> {{ table.note }}</p>
+    <hr>    
 
-    <p>created: {{ table.created.strftime('%d.%m.%Y ob %H:%M:%S') }}</p>
-    <p>datum: {{ table.date }}</p>
-    <p>začetek dela: {{ table.start }}</p>
-    <p>konec dela: {{ table.end }}</p>
-    <p>vrsta dela: {{ table.job_name }}</p>
-    <p>urna postavka: {{ table.eur_hour }}</p>
-    <p>Opomba: {{ table.note }}</p>
-    <p>user: {{ table.user }}</p>
-    <p>zaslužek tega dneva: {{ table.daily }}</p>
-    <p>zaslužek tega dneva - 15,5%: {{ table.dailywtax }}</p>
-
-    Želiš izbrisati ta dan? <a href="/table/{{ table.key.id() }}/delete"><button>da</button></a>
-
+    <span class="izbris_text">Želiš izbrisati ta dan?</span> <a href="/table/{{ table.key.id() }}/delete"><button type="button" class="btn btn-danger">Da</button></a>
+    <div class="table_info_gumb">
+        <a href="/domov"><button type="button" class="btn btn-default">Domov</button></a>
+        <a href="/placa"><button type="button" class="btn btn-default">Plača</button></a>
+    </div>
+    </div>
+        
+    </div>
+    
+</div>
 {% endblock content %}

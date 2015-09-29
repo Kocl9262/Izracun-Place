@@ -11,16 +11,28 @@
         <link rel="stylesheet" href="/assets/css/style.css">
         <link rel="stylesheet" href="/assets/css/jquery-ui.css">
         <link rel="shortcut icon" href="/assets/favicon/b.png">
+        
+        
 
         <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-        <!--[if lt IE 9]>
+        <!--[if lt IE 9]-->
             <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
             <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
         <![endif]-->
+
+        <!-- Begin Cookie Consent plugin by Silktide - http://silktide.com/cookieconsent -->
+            <script type="text/javascript">
+                window.cookieconsent_options = {"message":"Ta stran uporablja piškotke za izboljšanje uporabniške izkušnje. Z nadaljno uporabo te strani, se strinjate z uporabo piškotkov.","dismiss":"Strinjam se!","learnMore":"Več","link":null,"theme":"dark-bottom"};
+            </script>
+
+            <script type="text/javascript" src="//s3.amazonaws.com/cc.silktide.com/cookieconsent.latest.min.js"></script>
+        <!-- End Cookie Consent plugin -->
+
+
     </head>
     <body>
-
+       
     <header class="page-row">
       <nav class="navbar navbar-inverse navbar-fixed-top glava">
             <div class="container container-fluid">
@@ -112,7 +124,9 @@
 
                                                 <li class="kontakt"><a href="#contact" data-toggle="modal">Pišite nam</a></li>
                                                 <li class="kontakt"><a href="#terms" data-toggle="modal">Splošni pogoji in uporaba</a></li>
+                                              {% if admin %}
                                                 <li class="kontakt"><a href="#faq" data-toggle="modal">FAQ</a></li>
+                                              {% endif %}
 
 
                                           </ul>
@@ -178,11 +192,12 @@
                                     <form class="form-horizontal">
                                           <div class="modal-header">
 
-                                                <h1>Pogoji uporabe spletnega mesta www.izračun_plače.si</h1>
+                                                <h1>Pogoji uporabe tega spletnega mesta</h1>
+                                                <hr><br>
 
                                                 <h2>Predstavitev</h2>
 
-                                                <p>Podatki, zbrani na tej spletni strani, so bili pripravljeni natančno in skrbno. Kljub temu obstaja možnost, da je pri vnosu vsebin ali na spletnem mestu prišlo do napak, za kar se obiskovalcem spletne strani opravičujemo. Če ste opazili napako, vas prosimo, da nas na to opozorite na elektronski naslov info@lumar.si. Z vstopom na to spletno mesto vsakdo, brez omejitev in zadržkov, sprejema Splošne pogoje uporabe spletne strani.</p>
+                                                <p>Podatki, zbrani na tej spletni strani, so bili pripravljeni natančno in skrbno. Kljub temu obstaja možnost, da je pri vnosu vsebin ali na spletnem mestu prišlo do napak, za kar se obiskovalcem spletne strani opravičujemo. Če ste opazili napako, vas prosimo, da nas na to opozorite (obrazec "Pišite nam", ki se nahaja v nogi). Z vstopom na to spletno mesto vsakdo, brez omejitev in zadržkov, sprejema Splošne pogoje uporabe spletne strani.</p>
 
                                                 <h3>Vsebina</h3>
 
@@ -195,7 +210,7 @@
 
                                                 <h3>Osebni podatki/uporabniški podatki</h3>
 
-                                                <p>Podatke, ki jih Skrbniku spletnega mesta posredujete preko spletnih strani, bo uporabil izključno Skrbnik spletnega mesta z namenom oblikovanja ponudbe storitev in/ali izdelkov podjetja Lumar. V skladu z naravo takšnih informacij podjetje Lumar IG d.o.o. in Skrbnik spletnega mesta skušata po svojih najboljših močeh zagotavljati varno zbiranje, prenos in shranjevanje osebnih podatkov. Skrbnik spletnega mesta vaših osebnih podatkov ne bo posredoval tretjim pravnim ali fizičnim osebam, razen drugim entitetam v okviru mreže poslovno-storitvenih centrov podjetja Lumar. Kadarkoli lahko uveljavljate pravico do dostopa, do popravka ali preklica dovoljenja za uporabo svojih osebnih podatkov.</p>
+                                              <p>Podatke, ki jih Skrbniku spletnega mesta posredujete preko spletnih strani, bo uporabil izključno Skrbnik spletnega mesta z namenom oblikovanja ponudbe storitev in/ali izdelkov. V skladu z naravo takšnih informacij skrbnik spletnega mesta skuša po svojih najboljših močeh zagotavljati varno zbiranje, prenos in shranjevanje osebnih podatkov. Skrbnik vaših osebnih podatkov ne bo posredoval tretjim pravnim ali fizičnim osebam.</p>
 
                                                 <p>Skrbnik spletnega mesta upošteva naravo interneta kot medija, preko katerega lahko posamezniki posredujejo povratne informacije ali druge podatke v zvezi s skrbnikovo spletno stranjo. Skrbnik spletnega mesta si bo po svojih najboljših močeh prizadeval, da bodo tako posredovani podatki in povratne informacije, če bodo primerne in uporabne, tudi upoštevane. Skrbnik spletnega mesta ne prevzema nikakršne odgovornosti v zvezi z vsakršnimi, s strani uporabnika posredovanimi podatki, in si pridržuje pravico, da kakršnekoli takšne podatke odstrani iz svojih baz brez obrazložitve ali predhodnega obvestila.</p>
 
@@ -223,14 +238,7 @@
 
                                                 <p>Skrbnik spletnega mesta si pridržuje pravico do spreminjanja splošnih pogojev brez predhodnega opozorila. Spremembe začnejo veljati takoj, ko so objavljene.</p>
 
-                                                <h3>Kontakt</h3>
-
-                                                <p>Plača d.o.o., Limbuška cesta 32 A, 2000 Maribor</p>
-
-                                                <h3>Objava sprememb</h3>
-
-                                                <p>Vsaka sprememba naše politike o varovanju osebnih podatkov bo objavljena v tej izjavi o varovanju osebnih podatkov, na vstopni strani www.lumar.si in na drugih ustreznih mestih.</p>
-
+                                               
                                                 <p>Zadnja posodobitev: september 2015</p>
 
                                           </div>
@@ -267,9 +275,9 @@
                 </div>
 
         </footer>
+        
 
-
-
+    
     <script src="/assets/js/jquery-1.11.3.min.js"></script>
     <script src="/assets/js/jquery-ui.min.js"></script>
     <script src="/assets/js/koledar.js"></script>
