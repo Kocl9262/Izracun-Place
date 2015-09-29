@@ -101,6 +101,20 @@ body {
     border-radius: 10px;
 }
 
+.table_izbrisi {
+    box-shadow: 10px 10px 15px #211d1d;
+    color: aliceblue;
+    margin:  0 auto;
+    width: 70%;
+    background-color: #434343;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.table_izbrisi_text {
+    text-align: center;
+} 
+
 label {
     margin-left: 20px;
     width: 120px;
@@ -331,6 +345,8 @@ table .table_section .nevidna {
     color: aliceblue;
     font-weight: bold;
 }
+
 .table_info_button {
     float: right;
 }
+
