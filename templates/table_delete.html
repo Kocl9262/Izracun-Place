@@ -6,26 +6,26 @@
 
 {% block content %}
 
-<div class="container table_izbrisi">
-    
-    <h1 class="table_izbrisi_text">Ali ste res prepričani, da želite izbrisati ta dan?</h1> 
-    <h4 class="table_izbrisi_text">To je vaša zadnja možnost za premislek!!!</h4>
-    <hr>
-    
-    <div class="row">
-        <div class="col-sm-1">
-            <form class="table_info_form" method="post" action="/table/{{ table.key.id() }}/delete">
-                <button type="submit" class="btn btn-danger">Da</button>
-            </form>
-        </div>
-        
-        <div class="col-sm-4 col-sm-offset-7">
-            <div class="table_info_button">
-                <a href="/"><button type="button" class="btn btn-default">Domov</button></a>
-                <a href="/l2015"><button type="button" class="btn btn-default">Plača</button></a>
+    <div class="container table_izbrisi">
+
+        <h1 class="table_izbrisi_text">Ali ste res prepričani, da želite izbrisati ta dan?</h1>
+        <h4 class="table_izbrisi_text">To je vaša zadnja možnost za premislek!!!</h4>
+        <hr>
+
+        <div class="row">
+            <div class="col-sm-1">
+                <form class="table_info_form" method="post" action="/table/{{ table.key.id() }}/delete">
+                    <button type="submit" class="btn btn-danger">Da</button>
+                </form>
+            </div>
+
+            <div class="col-sm-4 col-sm-offset-7">
+                <div class="table_info_button">
+                    <a href="/"><button type="button" class="btn btn-default">Domov</button></a>
+                    <a href="/l2015"><button type="button" class="btn btn-default">Plača</button></a>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
 {% endblock content %}

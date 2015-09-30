@@ -6,81 +6,83 @@
 
 {% block content %}
 
-<div class="container">
-    <div class="row">
-    <div class="col-md-10">     
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10">
 
-    <table class="table table-bordered table-condensed tabela_ozadje">
-        <tr class="table_title">
-            <th colspan="8"><a href="/dodaj"><button type="button" class="btn btn-default gumb_table">Dodaj</button></a>{% block tabletitle %}{% endblock tabletitle %}</th>
-        </tr>
-        <tr class="table_section">
-            <th>Del. mesto</th>
-            <th>Datum</th>
-            <th>Začetek</th>
-            <th>Konec</th>
-            <th>Ur</th>
-            <th class="opomba">Opomba</th>
-            <th>Zaslužek</th>
-            <th>-15,5%</th>
-        </tr>
-        {% for info in salary %}
-        <tr class="table_data">
-            <td>{{info.job_name}}</td>
-            <td>{{info.date}}</td>
-            <td>{{info.start}}</td>
-            <td>{{info.end}}</td>
-            <td>{{info.total_hrs}}</td>
-            <td class="opomba"><a href="/table/{{ info.key.id() }}">{{info.note}}</a></td>
-            <td>{{info.daily}}€</td>
-            <td>{{info.dailywtax}}€</td>
-        </tr>
-        {% endfor %}
-        <tr class="table_section">
-            <td class="nevidna" colspan="3"></td>
-            <td class="table_section_barva">Skupaj ur:</td>
-            <td class="table_section_barva">{{month_total_hrs}}</td>
-            <td class="table_section_barva">Skupaj €:</td>
-            <td class="table_section_barva">{{month_total_daily}}€</td>
-            <td class="table_section_barva">{{month_total_dailywtax}}€</td>
-        </tr>
-    </table>
-</div>
-    
+            <table class="table table-bordered table-condensed tabela_ozadje">
+                <tr class="table_title">
+                    <th colspan="8"><a href="/dodaj"><button type="button" class="btn btn-default gumb_table">Dodaj</button></a>{% block tabletitle %}{% endblock tabletitle %}</th>
+                </tr>
+                <tr class="table_section">
+                    <th>Del. mesto</th>
+                    <th>Datum</th>
+                    <th>Začetek</th>
+                    <th>Konec</th>
+                    <th>Ur</th>
+                    <th class="opomba">Opomba</th>
+                    <th>Zaslužek</th>
+                    <th>-15,5%</th>
+                </tr>
 
-    <div class="col-md-2">
-    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-  <div class="panel panel-default">
-    <div class="panel-heading" role="tab" id="headingOne">
-      <h4 class="panel-title sidebar_glava">
-        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-          2015
-        </a>
-      </h4>
+                {% for info in salary %}
+
+                    <tr class="table_data">
+                        <td>{{info.job_name}}</td>
+                        <td>{{info.date}}</td>
+                        <td>{{info.start}}</td>
+                        <td>{{info.end}}</td>
+                        <td>{{info.total_hrs}}</td>
+                        <td class="opomba"><a href="/table/{{ info.key.id() }}">{{info.note}}</a></td>
+                        <td>{{info.daily}}€</td>
+                        <td>{{info.dailywtax}}€</td>
+                    </tr>
+
+                {% endfor %}
+
+                <tr class="table_section">
+                    <td class="nevidna" colspan="3"></td>
+                    <td class="table_section_barva">Skupaj ur:</td>
+                    <td class="table_section_barva">{{month_total_hrs}}</td>
+                    <td class="table_section_barva">Skupaj €:</td>
+                    <td class="table_section_barva">{{month_total_daily}}€</td>
+                    <td class="table_section_barva">{{month_total_dailywtax}}€</td>
+                </tr>
+            </table>
+            </div>
+
+
+            <div class="col-md-2">
+                <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingOne">
+                            <h4 class="panel-title sidebar_glava">
+                                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">2015</a>
+                            </h4>
+                        </div>
+                        <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                            <div class="panel-body">
+                                <ul>
+                                    <li><a href="/l2015">Skupaj</a></li>
+                                    <li><a href="/januar15">Januar</a></li>
+                                    <li><a href="/februar15">Februar</a></li>
+                                    <li><a href="/marec15">Marec</a></li>
+                                    <li><a href="/april15">April</a></li>
+                                    <li><a href="/maj15">Maj</a></li>
+                                    <li><a href="/junij15">Junij</a></li>
+                                    <li><a href="/julij15">Julij</a></li>
+                                    <li><a href="/avgust15">Avgust</a></li>
+                                    <li><a href="/september15">September</a></li>
+                                    <li><a href="/oktober15">Oktober</a></li>
+                                    <li><a href="/november15">November</a></li>
+                                    <li><a href="/december15">December</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
-      <div class="panel-body">
-            <ul>
-            <li><a href="/l2015">Skupaj</a></li>
-            <li><a href="/januar15">Januar</a></li>
-            <li><a href="/februar15">Februar</a></li>
-            <li><a href="/marec15">Marec</a></li>
-            <li><a href="/april15">April</a></li>
-            <li><a href="/maj15">Maj</a></li>
-            <li><a href="/junij15">Junij</a></li>
-            <li><a href="/julij15">Julij</a></li>
-            <li><a href="/avgust15">Avgust</a></li>
-            <li><a href="/september15">September</a></li>
-            <li><a href="/oktober15">Oktober</a></li>
-            <li><a href="/november15">November</a></li>
-            <li><a href="/december15">December</a></li>
-    </ul>
-      </div>
-    </div>
-  </div>
-</div>
-</div>
-</div>
-</div>
 
 {% endblock content %}
