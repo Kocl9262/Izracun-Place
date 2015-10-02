@@ -25,6 +25,8 @@ body {
     box-shadow: 10px 10px 15px #211d1d;
     color: aliceblue;
     margin:  0 auto;
+    margin-bottom: 60px;
+    padding: 10px;
 }
 
 .glava {
@@ -348,4 +350,12 @@ table .table_section .nevidna {
 
 .table_info_button {
     float: right;
+}
+
+.vezaj ul li {
+    list-style: inside;
+}
+
+.vezaj ul {
+    padding: 0;
 }
