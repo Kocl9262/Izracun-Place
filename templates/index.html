@@ -2,11 +2,40 @@
 
 {% block title %}Izračun plače{% endblock title %}
 
-{% block active1 %}active{% endblock active1 %}
+{% block active %}active{% endblock active %}
 
 {% block content %}
 
-<a href="{{ login_url }}">Login</a>
-<a href="/dodaj">Dodaj</a>
+    <div class="container index">
+        <div class="row">
+            <div class="index_zaposlitev">
+                <h3>Iščeš zaposlitev?</h3>
+            </div>
+
+            <div class="col-sm-4 col-sm-offset-1">
+
+                <ul class="index_slike">Študentsko delo:
+                      <li class="slike_pos"><a target="_blank" href="http://www.studentski-servis.com/"><img src="/assets/img/e-stud.png" class="img-responsive"></a></li>
+                      <li class="slike_pos"><a target="_blank" href="http://www.mservis.si/"><img src="/assets/img/m-servis.jpg" class="img-responsive"></a></li>
+                      <li class="slike_pos"><a target="_blank" href="http://www.stud-serv-mb.si/"><img src="/assets/img/studentski_servis_maribor.jpg" class="img-responsive"></a></li>
+                      <li class="slike_pos"><a target="_blank" href="http://www.studentski.si/"><img src="/assets/img/studentski.si.png" class="img-responsive"></a></li>
+                </ul>
+
+            </div>
+            <div class="col-sm-4 col-sm-offset-2">
+
+                <ul class="index_slike">Redno delo:
+                    <li class="slike_pos"><a target="_blank" href="http://www.ess.gov.si/"><img src="/assets/img/zzzs.jpg" class="img-responsive"></a></li>
+                    <li class="slike_pos"><a target="_blank" href="https://www.mojedelo.com/"><img src="/assets/img/mdelo.jpg" class="img-responsive"></a></li>
+                    <li class="slike_pos"><a target="_blank" href="http://www.mojazaposlitev.si/"><img src="/assets/img/mzapo.png" class="img-responsive"></a></li>
+                    <li class="slike_pos"><a target="_blank" href="http://www.e-zaposlitev.com/"><img src="/assets/img/e-zap.png" class="img-responsive"></a></li>
+                </ul>
+
+            </div>
+        </div>
+        <br>
+    </div>
+    <br>
+    <br>
 
 {% endblock content %}

@@ -1,4 +1,4 @@
-application: izracun-place
+application: izracunplace
 version: 1
 runtime: python27
 api_version: 1
@@ -7,6 +7,10 @@ threadsafe: yes
 handlers:
 - url: /assets
   static_dir: assets
+
+- url: /admin/.*
+  script: admin.app
+  login: admin
 
 - url: .*
   script: main.app
