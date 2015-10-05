@@ -142,7 +142,7 @@ class DodanoHandler(BaseHandler):
                         total_hrs=total_hrs, daily=daily, dailywtax=dailywtax, d=d, m=m, y=y)
         salary.put()
 
-        self.render_template("dodano.html")
+        return self.redirect_to("pregled")
 
 
 class TableHandler(BaseHandler):
