@@ -53,6 +53,15 @@ def year(self, leto):
 
         month_total_hrs = ("%s:%s") % (h, m)
 
+        month_total_daily = str(month_total_daily)
+        month_total_dailywtax = str(month_total_dailywtax)
+
+        if month_total_daily.find(".") != -1:
+            month_total_daily = month_total_daily.replace(".", ",")
+
+        if month_total_dailywtax.find(".") != -1:
+            month_total_dailywtax = month_total_dailywtax.replace(".", ",")
+
         params = {"salary": salary, "month_total_daily": month_total_daily,
                   "month_total_dailywtax": month_total_dailywtax, "month_total_hrs": month_total_hrs}
 
@@ -113,6 +122,15 @@ def month(self, mesec, leto, mesec_html):
             m = ("0%s") % (m)
 
         month_total_hrs = ("%s:%s") % (h, m)
+
+        month_total_daily = str(month_total_daily)
+        month_total_dailywtax = str(month_total_dailywtax)
+
+        if month_total_daily.find(".") != -1:
+            month_total_daily = month_total_daily.replace(".", ",")
+
+        if month_total_dailywtax.find(".") != -1:
+            month_total_dailywtax = month_total_dailywtax.replace(".", ",")
 
         params = {"salary": salary, "month_total_daily": month_total_daily,
                   "month_total_dailywtax": month_total_dailywtax, "month_total_hrs": month_total_hrs}
