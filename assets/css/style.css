@@ -19,14 +19,17 @@ body {
     height: 100%;
 }
 
-.index {
+.siv_kvadrat {
     background: #434343;
     border-radius: 10px;
     box-shadow: 10px 10px 15px #211d1d;
     color: aliceblue;
     margin:  0 auto;
-    margin-bottom: 60px;
     padding: 10px;
+}
+
+.index {
+    margin-bottom: 60px;
 }
 
 .glava {
@@ -94,23 +97,11 @@ body {
 }
 
 .dodaj {
-    box-shadow: 10px 10px 15px #211d1d;
-    color: aliceblue;
-    margin:  0 auto;
     width: 70%;
-    background-color: #434343;
-    padding: 10px;
-    border-radius: 10px;
 }
 
 .table_izbrisi {
-    box-shadow: 10px 10px 15px #211d1d;
-    color: aliceblue;
-    margin:  0 auto;
     width: 70%;
-    background-color: #434343;
-    padding: 10px;
-    border-radius: 10px;
 }
 
 .table_izbrisi_text {
@@ -151,13 +142,8 @@ textarea {
 }
 
 .dodano {
-    background-color: #434343;
     text-align: center;
-    box-shadow: 10px 10px 15px #211d1d;
-    color: aliceblue;
     width: 70%;
-    padding: 10px;
-    border-radius: 10px;
 }
 
 .tabela_ozadje {
@@ -251,6 +237,19 @@ table .table_section .nevidna {
     color: aliceblue;
 }
 
+.sporocilo_sredina {
+    text-align: center;
+    color: aliceblue;
+}
+
+.sporocilo_levo {
+    float: left;
+}
+
+.sporocilo_desno {
+    float: right;
+}
+
 .admin_levo {
     float: left;
     color: aquamarine;
@@ -295,11 +294,7 @@ table .table_section .nevidna {
 }
 
 .kontakt_user {
-    background-color: #434343;
-    border-radius: 5px;
-    width: 80%;
-    padding: 20px;
-    margin-bottom: 10px;
+    margin-bottom: 50px;
 }
 
 .kontakt_info {
@@ -307,14 +302,29 @@ table .table_section .nevidna {
 }
 
 .kontakt_admin {
+    box-shadow: 5px 5px 5px #211d1d;
     background-color: #434343;
     border-radius: 5px;
     width: 80%;
     padding: 20px;
+    padding-top: 15px;
+    padding-bottom: 8px;
+    margin-bottom: 10px;
+}
+
+.sporocilo_admin {
+    box-shadow: 10px 10px 15px #211d1d;
+    background-color: #434343;
+    border-radius: 5px;
+    width: 80%;
+    padding: 20px;
+    padding-top: 15px;
+    padding-bottom: 8px;
     margin-bottom: 10px;
 }
 
 .admin_linki {
+    box-shadow: 10px 10px 15px #211d1d;
     background-color: #434343;
     border-radius: 5px;
     padding: 5px;
@@ -327,6 +337,10 @@ table .table_section .nevidna {
 }
 
 .admin_linki ul li a {
+    color: aliceblue;
+}
+
+.sporocilo_linki a {
     color: aliceblue;
 }
 

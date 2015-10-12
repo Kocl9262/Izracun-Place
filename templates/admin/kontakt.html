@@ -8,15 +8,8 @@
 
         {% for item in message %}
 
-            <div class="container kontakt_admin">
-                <div>
-                    <p class="admin_levo"><small>{{ item.created.strftime('%d.%m.%Y ob %H:%M:%S') }}</small></p>
-                    <p class="admin_desno">Username: <small>{{ item.user }}</small></p>
-                </div><br><hr>
-                <p class="admin"><b><span class="kontakt_info">Ime:</span></b> <em>{{ item.name }}</em></p>
-                <p class="admin"><b><span class="kontakt_info">Email:</span></b> <em>{{ item.email }}</em></p>
-                <hr>
-                <p class="admin"><b><span class="kontakt_info">Sporočilo:</span></b> {{ item.message }}</p>
+            <div class="container kontakt_admin sporocilo_linki">
+                <p class="sporocilo_sredina"><span class="kontakt_info sporocilo_levo">Ime:&nbsp;</span><span class="sporocilo_levo">{{ item.name }}</span> <span class="kontakt_info">Mail: </span><a href="/msg/{{ item.key.id() }}">{{ item.user }}</a>  <span class="sporocilo_desno">{{ item.created.strftime('%d.%m.%Y') }}</span></p>
             </div>
 
         {% endfor %}

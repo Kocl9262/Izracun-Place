@@ -5,7 +5,7 @@ from BasicHandlers import MainHandler, DodajHandler, DodanoHandler, TableHandler
 from Pregled2015Handler import L2015Handler, Januar15Handler, Februar15Handler, Marec15Handler, April15Handler,\
     Maj15Handler, Junij15Handler, Julij15Handler, Avgust15Handler, September15Handler, Oktober15Handler,\
     November15Handler, December15Handler
-from AdminHandlers import AdminHandler, SporociloOddano, KontaktHandler
+from AdminHandlers import AdminHandler, SporociloOddano, KontaktHandler, MessageHandler
 
 app = webapp2.WSGIApplication([
     webapp2.Route('/', MainHandler),
@@ -29,4 +29,5 @@ app = webapp2.WSGIApplication([
     webapp2.Route('/admin', AdminHandler),
     webapp2.Route('/poslano', SporociloOddano),
     webapp2.Route('/kontakt', KontaktHandler),
+    webapp2.Route('/msg/<msg_id:\d+>', MessageHandler),
 ], debug=True)

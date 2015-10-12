@@ -34,3 +34,12 @@ class KontaktHandler(BaseHandler):
         params = {"message": message}
 
         self.render_template("admin/kontakt.html", params)
+
+
+class MessageHandler(BaseHandler):
+    def get(self, msg_id):
+        msg = Kontakt.get_by_id(int(msg_id))
+
+        params = {"msg": msg}
+
+        self.render_template("admin/msg.html", params)

@@ -1,0 +1,28 @@
+{% extends "admin_base.html" %}
+
+{% block title %}Sporočilo{% endblock title %}
+
+{% block content2 %}
+
+    {% if admin %}
+
+            <div class="container sporocilo_admin">
+                <div>
+                    <p class="admin_levo"><small>{{ msg.created.strftime('%d.%m.%Y ob %H:%M:%S') }}</small></p>
+                    <p class="admin_desno">Username: <small>{{ msg.user }}</small></p>
+                </div><br><hr>
+                <p class="admin"><b><span class="kontakt_info">Ime:</span></b> <em>{{ msg.name }}</em></p>
+                <p class="admin"><b><span class="kontakt_info">Email:</span></b> <em>{{ msg.email }}</em></p>
+                <hr>
+                <p class="admin"><b><span class="kontakt_info">Sporočilo:</span></b> {{ msg.message }}</p>
+            </div>
+
+    {% else %}
+
+        <div class="container base_vpis">
+            <h3 class="admin">Ja poba, ti pa nisi admin...</h3>
+        </div>
+
+    {% endif %}
+
+{% endblock content2 %}

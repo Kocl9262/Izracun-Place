@@ -165,7 +165,5 @@ class TableDelete(BaseHandler):
     def post(self, table_id):
         table = Salary.get_by_id(int(table_id))
         table.key.delete()
+
         return self.redirect_to("pregled")
-
-
-
