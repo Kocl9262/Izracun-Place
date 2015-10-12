@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+
+{% block title %}Dodaj{% endblock title %}
+
+{% block active1 %}active{% endblock active1 %}
+
+{% block content %}
+
+    <div class="container">
+
+        {% if logged_in %}
+
+            <div class="row siv_kvadrat dodaj">
+                <div class="col-md-12">
+                    <div class="dodaj_naslov">
+                        <h3>Prosimo vpišite podatke</h3>
+                    </div>
+                    <form method="post" action="/dodano">
+
+                        <label>*Datum dela: </label>
+
+                        <input id="calendar" name="date" required readonly>
+                        <br>
+                        <br>
+
+                        <label>*Začetek: </label>
+
+                        <input name="start" type="text" placeholder="9:00" required>
+                        <br>
+                        <br>
+
+                        <label>*Konec: </label>
+
+                        <input name="end" type="text" placeholder="15:30 (če delate čez polnoč 1:00 pišete 25:00)" required>
+                        <br>
+                        <br>
+
+                        <label>*Vrsta dela: </label>
+
+                        <input name="job_name" type="text" placeholder="Bar" required>
+                        <br>
+                        <br>
+
+                        <label>*Urna postavka: </label>
+
+                        <input name="eur_hour" type="text" placeholder="4,5" required>
+                        <br>
+                        <br>
+
+
+                        <label class="">Opomba: </label>
+
+                        <textarea name="note" rows="7"></textarea>
+                        <br>
+                        <br>
+
+                       <div class="button-right">
+                           <button type="submit" class="btn btn-default">Potrdi</button>
+                        </div>
+                    </form>
+                    <p class="zvezda">Polja z * so obvezna</p>
+                </div>
+            </div>
+
+            <br>
+            <br>
+
+        {% else %}
+
+            <center><h1>Please login</h1></center>
+
+        {% endif %}
+
+</div>
+
+{% endblock content %}

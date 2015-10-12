@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block title %}Izračun plače{% endblock title %}
+
+{% block active %}active{% endblock active %}
+
+{% block content %}
+
+    <div class="container siv_kvadrat index vezaj">
+        <h1>Uporaba strani</h1>
+        <hr>
+        <p>Trenutno smo še v izdelavi, določeni elementi še niso dokončani. V primeru, da se soočate s težavami, ali imate kakšno idejo nas lahko kontaktirate preko tega <a href="#contact" data-toggle="modal">obrazca</a>.</p>
+        <p>Stran je namenjena izračunu študentskega dela. Namesto, da se mučite s svinčnikom in kalkulatorjem, lahko vse uredite tukaj <a href="/l2015"><button type="button" class="btn btn-danger btn-lg">Leto 2015</button></a>
+            <br>
+            V obrazec vnašate podatke, kot je
+         prikazano v posameznih poljih.</p>
+        <ul>Pomembno je:
+            <li>polne ure pišete z :00 (9:00, 10:00...)</li>
+            <li>delo čez polnoč pišete na sledeč način: polnoč = 24:00, 01:00 = 25:00...</li>
+        </ul>
+        <p>Za uporabo se vam zahvaljujemo in upamo, da smo vam olajšali delo.</p>
+    </div>
+
+    <div class="container siv_kvadrat index">
+        <div class="row">
+            <div class="index_zaposlitev">
+                <h3>Iščeš zaposlitev?</h3>
+            </div>
+
+            <div class="col-sm-4 col-sm-offset-1">
+
+                <ul class="index_slike">Študentsko delo:
+                      <li class="slike_pos"><a target="_blank" href="http://www.studentski-servis.com/"><img src="/assets/img/e-stud.png" class="img-responsive"></a></li>
+                      <li class="slike_pos"><a target="_blank" href="http://www.mservis.si/"><img src="/assets/img/m-servis.jpg" class="img-responsive"></a></li>
+                      <li class="slike_pos"><a target="_blank" href="http://www.stud-serv-mb.si/"><img src="/assets/img/studentski_servis_maribor.jpg" class="img-responsive"></a></li>
+                      <li class="slike_pos"><a target="_blank" href="http://www.studentski.si/"><img src="/assets/img/studentski.si.png" class="img-responsive"></a></li>
+                </ul>
+
+            </div>
+            <div class="col-sm-4 col-sm-offset-2">
+
+                <ul class="index_slike">Redno delo:
+                    <li class="slike_pos"><a target="_blank" href="http://www.ess.gov.si/"><img src="/assets/img/zzzs.jpg" class="img-responsive"></a></li>
+                    <li class="slike_pos"><a target="_blank" href="https://www.mojedelo.com/"><img src="/assets/img/mdelo.jpg" class="img-responsive"></a></li>
+                    <li class="slike_pos"><a target="_blank" href="http://www.mojazaposlitev.si/"><img src="/assets/img/mzapo.png" class="img-responsive"></a></li>
+                    <li class="slike_pos"><a target="_blank" href="http://www.e-zaposlitev.com/"><img src="/assets/img/e-zap.png" class="img-responsive"></a></li>
+                </ul>
+
+            </div>
+        </div>
+        <br>
+    </div>
+    <br>
+    <br>
+
+{% endblock content %}

@@ -1,0 +1,348 @@
+
+html, body {
+    background: url("/assets/img/green.jpg") no-repeat fixed;
+    height: 100%;
+    background-size: cover;
+}
+
+body {
+    display: table;
+    width: 100%;
+}
+
+.page-row {
+    display: table-row;
+    height: 1px;
+}
+
+.page-row-expanded {
+    height: 100%;
+}
+
+.siv_kvadrat {
+    background: #434343;
+    border-radius: 10px;
+    box-shadow: 10px 10px 15px #211d1d;
+    color: aliceblue;
+    margin:  0 auto;
+    padding: 10px;
+}
+
+.index {
+    margin-bottom: 60px;
+}
+
+
+.glava {
+    background: url("/assets/img/header2.jpg");
+    background-size: cover;
+}
+
+.nav.navbar-nav li a {
+    color: aliceblue;
+}
+
+.navbar-inverse .navbar-brand {
+    color: #c7c7c7;
+}
+
+.navbar-inverse .navbar-brand small {
+    font-size: 8px;
+}
+
+.avtorja {
+    margin-top: 12px;
+}
+
+.ime_avtor {
+    list-style:none;
+    background-repeat:no-repeat;
+}
+
+.fbico {
+    margin-left: -5px;
+}
+
+.hero_area {
+    margin-top: 60px;
+}
+
+.mgr-top {
+    margin-top: 100px;
+}
+
+.footer-wrapper {
+    color: aliceblue;
+    background: url("/assets/img/header2.jpg");
+    background-size: cover;
+    width: 100%;
+}
+
+.dodaj_naslov {
+    margin-bottom: 20px;
+}
+
+.index_zaposlitev {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.index_slike {
+    font-size: 18px;
+    text-align: center;
+}
+
+.slike_pos {
+    margin-bottom: 15px;
+    list-style: none;
+}
+
+.dodaj {
+    width: 70%;
+}
+
+.table_izbrisi {
+    width: 70%;
+}
+
+.table_izbrisi_text {
+    text-align: center;
+} 
+
+label {
+    margin-left: 20px;
+    width: 120px;
+}
+
+.dodaj input {
+    color:black;
+    width: 70%;
+}
+
+textarea {
+    color:black;
+    vertical-align: top;
+    width: 70%;
+    resize: none;
+}
+
+.button-right {
+    margin-top: 10px;
+}
+
+.dodano a {
+    color: aliceblue;
+}
+
+.button-right {
+    margin-left: 18px;
+}
+
+.zvezda {
+    text-align: right;
+}
+
+.dodano {
+    width: 70%;
+    text-align: center;
+}
+
+.tabela_ozadje {
+    background-color: transparent;
+    color: aliceblue;
+}
+
+table .table_section .table_section_barva {
+    background-color: #262424;
+}
+
+table .table_section td {
+    text-align: center;
+    background-color: #262424;
+}
+
+table .table_section th {
+    text-align: center;
+    background-color: #262424;
+}
+
+table .table_title th {
+    text-align: center;
+    font-size: 2em;
+    background-color: #262424;
+}
+
+table .table_data td {
+    text-align: center;
+    background-color: #434343;
+}
+
+table .table_section .nevidna {
+    border-left-color: transparent;
+    border-bottom-color: transparent;
+    background-color: transparent;
+}
+
+.obrazec {
+    padding: 10px;
+    background-color: #434343;
+    text-align: center;
+}
+
+.kontakt {
+    margin-bottom: 5px;
+    list-style-type: square;
+}
+
+.base_vpis {
+    width: 50%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #434343;
+    border-radius: 5px;
+}
+
+.vpis {
+    color: aliceblue;
+    text-align: center;
+    letter-spacing: 5px;
+}
+
+.gumb_table {
+    float: left;
+    margin-top: 3px;
+}
+
+.tabela_sidebar {
+    color: aliceblue;
+}
+
+#headingOne {
+    background-color: #262424;
+}
+
+.panel-body {
+    background-color: #434343;
+}
+
+.panel-body ul li {
+    color: aliceblue;
+}
+
+.panel-body ul li a {
+    color: aliceblue;
+}
+
+.sidebar_glava {
+    text-align: center;
+    color: aliceblue;
+}
+
+.admin_levo {
+    float: left;
+    color: aquamarine;
+}
+
+.admin_desno {
+    float: right;
+    color: aquamarine;
+}
+
+.admin {
+    clear: both;
+    text-align: left;
+    color: aliceblue;
+}
+
+.user_levo {
+    float: left;
+    color: deepskyblue;
+}
+
+.user_desno {
+    float: right;
+    color: deepskyblue;
+}
+
+.user {
+    clear: both;
+    text-align: left;
+    color: aliceblue;
+}
+
+.user_head {
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    color: aliceblue;
+}
+
+.izbris_text {
+    color: aliceblue;
+}
+
+.kontakt_user {
+    background-color: #434343;
+    border-radius: 5px;
+    width: 80%;
+    padding: 20px;
+    margin-bottom: 10px;
+}
+
+.kontakt_info {
+    color: aquamarine;
+}
+
+.kontakt_admin {
+    background-color: #434343;
+    border-radius: 5px;
+    width: 80%;
+    padding: 20px;
+    margin-bottom: 10px;
+}
+
+.admin_linki {
+    background-color: #434343;
+    border-radius: 5px;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+.admin_linki ul li {
+    color: aliceblue;
+    margin-bottom: 3px;
+}
+
+.admin_linki ul li a {
+    color: aliceblue;
+}
+
+.podatki_span {
+    font-weight: bold;
+    color: deepskyblue;
+}
+
+.table_data .opomba {
+    max-width: 5px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.admin_main {
+    text-align: center;
+    color: aliceblue;
+    font-weight: bold;
+}
+
+.table_info_button {
+    float: right;
+}
+
+.vezaj ul li {
+    list-style: inside;
+}
+
+.vezaj ul {
+    padding: 0;
+}
