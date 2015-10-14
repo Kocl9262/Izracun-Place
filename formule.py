@@ -6,7 +6,8 @@ def year(self, leto):
     current_user = users.get_current_user()
 
     if current_user:
-        salary = Salary.query(Salary.user == current_user.nickname(), Salary.y == leto).order(Salary.m).fetch()
+        salary = Salary.query(Salary.user == current_user.nickname(), Salary.y == leto).order(Salary.m).order(Salary.d)\
+            .fetch()
 
         daily = []
 

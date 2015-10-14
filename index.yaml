@@ -50,3 +50,10 @@ indexes:
   - name: user
   - name: y
   - name: m
+
+- kind: Salary
+  properties:
+  - name: user
+  - name: y
+  - name: m
+  - name: d
