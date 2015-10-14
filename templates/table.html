@@ -9,10 +9,11 @@
     <div class="container siv_kvadrat kontakt_user">
         <div class="row">
             <div class="col-sm-12">
-                <p class="user_levo">created: {{ table.created.strftime('%d.%m.%Y ob %H:%M:%S') }}</p>
-                <p class="user_desno">datum: {{ table.date }}</p>
+                <p class="user_levo">Dodano: {{ table.created.strftime('%d.%m.%Y ob %H:%M:%S') }}</p>
+                <p class="user_desno">Uporabnik: {{ table.user }}</p>
                     <br><hr>
-                <p class="user_head">{{ table.user }}</p>
+                <p class="user_head">PODATKI</p>
+                <p class="user"><span class="podatki_span">Datum:</span> {{ table.date }}</p>
                 <p class="user"><span class="podatki_span">Začetek dela:</span> {{ table.start }}</p>
                 <p class="user"><span class="podatki_span">Konec dela:</span> {{ table.end }}</p>
                 <p class="user"><span class="podatki_span">Skupaj ur:</span> {{ table.total_hrs }}ur</p>
