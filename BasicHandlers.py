@@ -142,7 +142,7 @@ class DodanoHandler(BaseHandler):
                         total_hrs=total_hrs, daily=daily, dailywtax=dailywtax, d=d, m=m, y=y)
         salary.put()
 
-        return self.redirect_to("pregled")
+        return self.redirect_to("pregled16")
 
 
 class TableHandler(BaseHandler):
@@ -166,4 +166,4 @@ class TableDelete(BaseHandler):
         table = Salary.get_by_id(int(table_id))
         table.key.delete()
 
-        return self.redirect_to("pregled")
+        return self.redirect_to("pregled16")
