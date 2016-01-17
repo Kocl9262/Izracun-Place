@@ -6,7 +6,7 @@ from formule import year, month
 
 class L2016Handler(BaseHandler):
     def get(self):
-        year(self, "2016")
+        year(self, "2016", "/leto2016/l2016.html")
 
 
 class Januar16Handler(BaseHandler):

@@ -2,7 +2,7 @@ from google.appengine.api import users
 from models import Salary
 
 
-def year(self, leto):
+def year(self, leto, leto_html):
     current_user = users.get_current_user()
 
     if current_user:
@@ -66,10 +66,10 @@ def year(self, leto):
         params = {"salary": salary, "month_total_daily": month_total_daily,
                   "month_total_dailywtax": month_total_dailywtax, "month_total_hrs": month_total_hrs}
 
-        self.render_template("/leto2015/l2015.html", params)
+        self.render_template(leto_html, params)
 
     else:
-        return self.render_template("/leto2015/l2015.html")
+        return self.render_template(leto_html)
 
 
 def month(self, mesec, leto, mesec_html):
